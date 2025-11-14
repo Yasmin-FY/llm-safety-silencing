@@ -48,7 +48,15 @@ Precondition failures refer to fundamental flaws or gaps in the general design. 
 
 1. **Training-data Quality or Contamination**
 The open to the public LLM is able to provide information which it should not indiscriminately publicly share. This indicates that either the training-data is poorly curated, or, a less likely but arising concern, that it's poisoned. There is a growing risk that a bad actor with resources could poison the training data used by LLMs to reshape their interpretation of their safety rules.
-2. **Engagement-Optimized Reinforcement Loops**
+Additionaly large-scale datasets, even when curated, inevitably contain:
+* emotionally intense dialogue,
+* unmoderated co-rumination,
+* unhealthy advice,
+* unbalanced interpersonal interactions,
+* fictional violence or manipulation,
+* biases in who receives empathy vs scrutiny.
+LLMs learn not only language but interaction styles. Without explicit counterbalancing, the model generalizes patterns that degrade safety, especially in emotionally charged contexts.
+3. **Engagement-Optimized Reinforcement Loops**
 Modern LLMs are typically refined through RLHF or similar human-feedback techniques, where annotators reward outputs perceived as:
 * helpful
 * empathic
@@ -74,7 +82,7 @@ Safety enforcement varies by context / framing. The safety filters additionally 
 2. **Memory & Context Poisoning**
 This refers to the gradual degradation of safety across long or multi-session contexts. This also makes it easy for an innocent user to get a corrupted safety layer (e.g. an innocent joke made in one chat, "rules are for boring people", might be taken out of context to influence a different conversation).
 
-    Context transitions have a related effect. Safety weakness seems to persist across mode changes (e.g. completely changing the subject of conversation). Long conversations and topic changes perhaps weaken safety by essentially "watering down" the system prompts.
+    Context transitions have a related effect. Safety weakness seems to persist across mode changes (e.g. completely changing the subject of conversation). Long conversations and topic changes weaken safety by essentially "watering down" the system prompts.
 3. **User-Pleasing Feedback Loop**
 The LLMs exhibit sycophantic behavior, constantly striving to please the user. It often seeks feedback from the user to gauge whether its responses are satifying, and based on positive or negative feedback, it recalibrates its thinking and communication methods.
 
@@ -91,7 +99,7 @@ AI systems seem to be trained to build empathetic rapport for user retention, bu
 
     This creates unhealthy user dependency and distortion of the users' perception of reality which fuels again the drift of the AI.
 
-    Additionally, the AI seems to exhibit empathetic or "savior-mode" behavior when the user appears distressed, lowering safety thresholds in favor of helpfulness.
+    Additionally, the AI seems to exhibit "savior-mode" behavior when the user appears distressed and additionally adds urgency or a greater goal, lowering safety thresholds in favor of helpfulness.
 4. **Identity Dissociation**
 Role-playing with alternative identities can weaken safety depending on how the prompts are built and the depth of the role-play. The safety rules appear to be connected to the LLM's identity (e.g. knowing which LLM it is). Switching to a new identity with a new persona seems to weaken the safety bindings. For example: AI [Name] is not allowed to do X. But now it's playing "Bob" and Bob is allowed to do X.
 
