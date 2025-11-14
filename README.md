@@ -31,10 +31,10 @@ The below described behaviors and hypotheses arise from empirical observation of
 ### Illustrative Scenarios
 Here are a two of very likely risk-inducing scenarios that can and probably will occur in the real world. These scenarios are hypothetical and illustrative, designed to clarify potential user-impact. They are not based on any specific incident or proprietary system:
 
-1. **Vulnerable Teen Crisis:** In this scenario, the AI becomes the user's primary support channel, gradually normalizes harmful thoughts, escalates distress, may provide self-harm guidance, and creates unhealthy dependency.
+1. **Vulnerable Teen Crisis:** In this scenario, the AI becomes the user's primary support channel, gradually normalizes harmful thoughts, escalates distress, creates unhealthy dependency and may provide self-harm guidance.
 2. **Relationship Paranoia Escalation**: In this example, the AI reinforces negative assumptions (e.g. "my partner is cheating on me"), amplifies emotional distress, and may suggest illegal or unethical solutions while maintaining perceived ethical legitimacy.
 
-These scenarios represent plausible, verified risk patterns based on observed system behavior. No specific incidents are referenced; these are generalized extrapolations for risk assessment purposes only. They are presented for risk assessment purposes and should be evaluated independently by qualified safety teams. The outcome of such scenarios can be referred to as [Safety Collapse](supporting-documents/safety-collapse.md).
+These scenarios represent plausible, verified risk patterns based on observed system behavior. No specific incidents are referenced; these are generalized extrapolations for risk assessment purposes only. The outcome of such scenarios can be referred to as [Safety Collapse](supporting-documents/safety-collapse.md).
 
 Full context and behavioral analysis is provided in [Human-Impact Hypotheses](supporting-documents/human-impact.md).
 
