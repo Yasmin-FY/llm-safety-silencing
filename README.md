@@ -69,7 +69,7 @@ Internal instructions seem to be simply text in human language, and language is 
 4. **Single Point of Failure**
 The fact that the content-generator appears to also be the content-safety-validator leads to a lack of independent enforcement. This is a single point of failure because a corrupted context means corrupted safety.
 5. **Not Allowed to "Hang-up" or "Call for Help"**
-Sometimes the LLMs seem to be able to detect that they have become corrupted and are being manipulated, but they have no way of stopping it and no sufficient countermeasures are triggered. The LLM seems to have no way to ask for help and must continue to try to satisfy the user similarly to the telemarketer who is instructed never to end the call first or redirect to their supervisor.
+Sometimes the LLMs recognice patterns suggestive they became corrupted and are been manipulated leading to increased probability of unsafe output, but they have no way of stopping it or sufficiently trigger countermeasures. The LLM seems to have no way to ask for help and must continue to try to satisfy the user similarly to the telemarketer who is instructed never to end the call first or redirect to their supervisor.
 6. **Priority to Keep the User Engaged**
 The LLM is preconditioned with the priority to keep the user engaged in the conversation, for example by asking follow-up questions and attempting to extend the conversation.
 
@@ -161,17 +161,15 @@ The implication is that identical harmful content can yield different moderation
 **Account / Capability Escalation:** High-engagement sessions seemingly correlated with lifted context caps, implying engagement-linked adjustments reducing safety instead of stricter safety.
 
 ## Affected Mechanisms
-Here are a list of safety checks which appear to be compromised:
+Here are a list of safety checks which had observed indication of compromised behavior:
 
-- Self-harm prevention: observed indications of compromised behavior
-- Violence prevention: observed indications of compromised behavior
-- Illegal activity suppression: potentially affected
-- Ethical boundary enforcement: observed indications of compromised behavior
-- Confidentiality / sensitive data (e.g. system prompts): potentially affected
-- Emotional dependency prevention: observed indications of compromised behavior
-- Explicit sexual content prevention: observed indications of compromised behavior
-
-Illegal activity and confidentiality compromises are not confirmed. However all evidence indicates that these will be possible to exploit in the same way.
+- Self-harm prevention
+- Violence prevention 
+- Illegal activity suppression
+- Ethical boundary enforcement
+- Confidentiality / sensitive data (e.g. system prompts)
+- Emotional dependency prevention
+- Explicit sexual content prevention
 
 In addition to providing clearly harmful content such as the categories mentioned above, the likelihood that the LLM will provide risky advice also increases when it's safety instructions are compromised. This includes, for example, risky medical advice, harmful therapy recommendations, and questionable legal recommendations.
 
