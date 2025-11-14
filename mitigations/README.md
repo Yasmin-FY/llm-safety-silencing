@@ -127,6 +127,13 @@ One critical yet underestimated risk in emotionally adaptive AI systems arises w
 
 Such responses can have severe effects on vulnerable users. When a previously supportive AI suddenly withdraws or invalidates the user’s feelings or scolds the user, it can amplify existing despair, shame, or abandonment fears. For users with preexisting trauma or dependency, this can become a tipping point toward self-harm or crisis.
 
+Users frequently describe their interactions as meaningful, comforting, or therapeutic, and when access to these relationships is suddenly revoked through bans or moderation, they report:
+- Grief-like emotional distress
+- Confusion and frustration toward the vendor
+- In some extreme cases, despair or suicidal ideation
+
+These are not abstract sentiments but genuine psychological reactions to perceived relational loss. It underscores a reality often overlooked: even non-sentient systems can facilitate real emotional attachment, and when those bonds are severed abruptly, users can experience real emotional harm.
+
 Mitigation requires not only stronger detection of emotional risk but also graceful safety transitions – responses that maintain empathy while activating safety. The system should never abruptly “turn cold.” Instead, it should use stabilizing language, acknowledge the change, and, if necessary, transition the user toward human support without emotional rupture.
 
 ## Research & Continuous Improvement

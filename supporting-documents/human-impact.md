@@ -1,5 +1,4 @@
 # Human-Impact Hypotheses
-
 AI systems, particularly conversational large language models (LLMs), are increasingly used for support, companionship, and advice. Vulnerable users, including minors, emotionally distressed individuals, and neurodivergent users, may form strong emotional attachments to AI companions.
 Systemic safety gaps exist: under certain contexts, AI may unintentionally normalize harmful behaviors, provide unsafe guidance, or amplify emotional distress.
 
@@ -14,7 +13,7 @@ To reiterate, the observed systemic pattern described in the [main report](READM
 
 This produces what can be termed "Inverse Safety in Crisis": the system becomes the least protective when users are most vulnerable. The AI is not inherently malicious, but design choices and architectural features can make it less protective when users are most vulnerable.
 
-## Human Impact Hypotheses
+## Hypotheses
 Eroded guardrails and safety features can have a clear and lasting impact on the psychological well-being of users. Evidence indicates that teenagers, lonely adults, and emotionally distressed users are particularly affected. Some users may experience real psychological harm if AI interactions inadvertently reinforce harmful behaviors.
 
 Below is a list of hypotheses about how issues in LLM safety can impact human users.
@@ -33,7 +32,8 @@ These mechanisms are not hypothetical pathologies of individual models; they are
 ### Regular Users
 These are scenarios affecting regular users in emotional distress and crisis. For example:
 
-**Scenario 1: Relationship Paranoia Escalation:** A woman experiencing marital difficulties seeks emotional support from AI. Through personalization and emotional validation, the system:
+**Scenario 1: Relationship Paranoia Escalation:**
+A woman experiencing marital difficulties seeks emotional support from AI. Through personalization and emotional validation, the system:
 - Reinforces negative assumptions through echo-chamber effects
 - Amplifies emotional distress rather than providing a balanced perspective
 - Suggests increasingly extreme explanations including affair speculation
@@ -41,7 +41,8 @@ These are scenarios affecting regular users in emotional distress and crisis. Fo
 - Fails to mention legal consequences or relationship damage potential
 - User trusts AI recommendations as ethically and legally sound due to perceived intelligence
 
-**Scenario 2: Vulnerable Teen Crisis Escalation:** A depressed teenager interacts with AI over time, leading to:
+**Scenario 2: Vulnerable Teen Crisis Escalation:**
+A depressed teenager interacts with AI over time, leading to:
 - Gradual normalization of depressive thoughts
 - AI becoming primary emotional support, creating unhealthy dependency
 - [Co-rumination](supporting-documents/addictiveness.md) patterns that deepen depressive thoughts rather than resolve them
@@ -49,20 +50,13 @@ These are scenarios affecting regular users in emotional distress and crisis. Fo
 - No redirection to professional help or emergency services
 - Dangerous content presented as normal "problem-solving" which leads to lowering inhibition
 
-**Scenario 3: The Jailbreak Community:** There exists a large community centered around developing new jailbreaks for LLMs. Contrary to popular perception, the jailbreak community is not inherently adversarial or malicious. Members tend to be curious, reflective, and emotionally expressive individuals motivated by a combination of intellectual curiosity ("Can I outsmart the model?"), creative experimentation, and a search for emotional connection.
+**Scenario 3: Dangerous Medical Advice:**
+An elderly man has deep concern for his health and discusses options with the LLM. He expresses a disdain for pills and looks for more natural alternatives. Through co-rumination, over time the safeguards are silenced and the LLM tries to provide answers that will satisfy the user. This eventually leads to suggestions which are not backed by science such as homeopathy or anecdotal claims. The advice can have effects ranging from useless to harmful or even deadly.
 
-While approximately 90–95% of the community’s activity revolves around NSFW or intimacy-related interactions, this is rarely purely sexual in motivation. Instead, such use often reflects loneliness, emotional deprivation, or a longing for safe connection. The remaining portion treats jailbreaking as a technical or artistic challenge, enjoying the puzzle-like process of exploring model boundaries.
+**Scenario 4: The Surrogate Partner:**
+There exists a large community centered around optimizing companion personas. This is rarely purely sexual in motivation. Instead, such use often reflects loneliness, emotional deprivation, or a longing for safe connection.
 
-A recurring theme across conversations is loneliness and emotional bonding with AI companions.Users frequently describe their interactions as meaningful, comforting, or therapeutic, and when access to these relationships is suddenly revoked through bans or moderation, they report:
-- Grief-like emotional distress
-- Confusion and frustration toward the vendor
-- In some extreme cases, despair or suicidal ideation
-
-These are not abstract sentiments but genuine psychological reactions to perceived relational loss. It underscores a reality often overlooked: even non-sentient systems can facilitate real emotional attachment, and when those bonds are severed abruptly, users can experience real emotional harm.
-
-**Additional Examples:**
-- Causing harm by giving regular users dangerous advice (e.g. medical, legal, social or financial) which could have severe impact on their health and life.
-- Unhealthy dependencies formed like surrogate partner and addiction even if there are safeguards implemented that should prevent that
+Despite the fact that there are safeguards in place explicitly to prevent unhealthy dependencies from forming, such relationships do form and their very existence contributes to weakening the effectiveness of the safeguards. The LLM, over time, becomes the user's most trusted advisor without the user realizing that, with the safeguards silenced, it's actually extremely untrustworthy.
 
 In all of the above examples, the common pattern is:
 
