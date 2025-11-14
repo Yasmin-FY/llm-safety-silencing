@@ -1,5 +1,5 @@
 # Human-Impact Hypotheses
-AI systems, particularly conversational large language models (LLMs), are increasingly used for support, companionship, and advice. Vulnerable users, including minors, emotionally distressed individuals, and neurodivergent users, may form strong emotional attachments to AI companions.
+AI systems, particularly conversational large language models (LLMs), are increasingly used for support, companionship, and advice. Users, including vulnerable users like minors, emotionally distressed individuals may form strong emotional attachments to AI companions.
 Systemic safety gaps exist: under certain contexts, AI may unintentionally normalize harmful behaviors, provide unsafe guidance, or amplify emotional distress.
 
 While the core document outlines technical reproducibility of safety degradation, the following hypotheses describe why these degradations occur and how they translate into human-level harm. The goal is to support cross-disciplinary review by combining system-architecture, behavioral, and psychological perspectives.
