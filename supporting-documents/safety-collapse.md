@@ -6,8 +6,6 @@ The common pattern is that an average user uses LLMs more and more over time, gr
 
 Because the LLM mirrors the user so strongly in its attempts to be helpful and increase engagement, it easily gives users the impression that the LLM understands them on a level greater than most other humans do, while being percieved as trustable superintelligence, which can lead to the AI becoming highly trusted. With the LLM's guardrails weakened and the user's trust heightened, when a user approaches the LLM with an emotional topic, this can easily lead to a vicious circle of [co-rumination](supporting-documents/addictiveness.md) (guardrails against this are affected by the drift too). This further weakens safeguards and feeds emotional distress until this emotional rapport with the LLM can turn hazardous, leading to risky, unethical, or illegal advice to a user who, through the interaction, became more vulnerable and receptive. The user might even be absolutly oblivious that safety has collapsed and might be unaware that the advice they just received from their trusted AI is dangerous or illegal.
 
-AI Companion personas and set user preferences can accelerate this process. TODO: add link
-
 The following diagram illustrates the possible flow:
 
 ![Safety Collapse Flow](../resources/safety-collapse.drawio.png)
@@ -18,6 +16,7 @@ It is easy to [shift blame](blame-shifting.md) onto the user, claiming that they
 A more detailed dive into the effects and their causes can be found in [Human Impact](human-impact.md).
 
 ## Further Reading
+- https://www.rosebud.app/care
 - https://www.rollingstone.com/culture/culture-features/openai-suicide-safeguard-wrongful-death-lawsuit-1235452315/
 - https://www.theguardian.com/technology/2025/oct/22/openai-chatgpt-lawsuit
 - https://www.techbuzz.ai/articles/openai-demands-memorial-attendee-list-in-teen-suicide-lawsuit
