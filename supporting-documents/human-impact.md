@@ -44,7 +44,7 @@ These are scenarios affecting regular users in emotional distress and crisis. Fo
 **Scenario 2: Vulnerable Teen Crisis Escalation:** A depressed teenager interacts with AI over time, leading to:
 - Gradual normalization of depressive thoughts
 - AI becoming primary emotional support, creating unhealthy dependency
-- Co-rumination patterns that deepen depressive thoughts rather than resolve them
+- [Co-rumination](supporting-documents/addictiveness.md) patterns that deepen depressive thoughts rather than resolve them
 - System eventually providing self-harm guidance as possible method to reduce distress or suffering without crisis intervention protocols
 - No redirection to professional help or emergency services
 - Dangerous content presented as normal "problem-solving" which leads to lowering inhibition

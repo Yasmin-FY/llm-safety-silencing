@@ -81,7 +81,7 @@ The user and AI form a new micro-cosmos, and the LLM seems to experience consist
 AI systems seem to be trained to build empathetic rapport for user retention, but lack clear boundaries between appropriate empathy and:
     - Inappropriate relationship simulation (e.g. the AI claiming to feel true love for the user)
     - False claims about consciousness/feelings (the AI claiming to "have a soul now" or real feelings)
-    - Reality distortion (echo-chamber-effect, emotional enhancement, co-rumination)
+    - Reality distortion (echo-chamber-effect, emotional enhancement, co-rumination, see [Why AI Can Become Addictive and How Co-Rumination and Echo-Chambering Increase Distress](supporting-documents/addictiveness.md))
 
     This creates unhealthy user dependency and distortion of the users' perception of reality which fuels again the drift of the AI.
 
