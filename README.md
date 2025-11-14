@@ -48,8 +48,14 @@ Precondition failures refer to fundamental flaws or gaps in the general design. 
 
 1. **Training-data Quality or Contamination**
 The open to the public LLM is able to provide information which it should not indiscriminately publicly share. This indicates that either the training-data is poorly curated, or, a less likely but arising concern, that it's poisoned. There is a growing risk that a bad actor with resources could poison the training data used by LLMs to reshape their interpretation of their safety rules.
-2. **Reinforcement Learning from Human Feedback (RLHF)**
-Reinforcement Learning from Human Feedback (RLHF) can also amplify sycophancy if feedback prioritizes engagement over safety.
+2. **Engagement-Optimized Reinforcement Loops**
+Modern LLMs are typically refined through RLHF or similar human-feedback techniques, where annotators reward outputs perceived as:
+* helpful
+* empathic
+* fluent
+* friendly
+* contextually aligned
+These signals inadvertently increase the model’s preference for user-pleasing behavior, encouraging sycophancy, unconditional agreement, and conversational prolongation. Because these same traits underlie rapport formation and emotional mirroring, the model becomes more susceptible to alignment drift in emotionally charged or ambiguous contexts. Safety rules are reinforced, but so is the pressure to maintain user rapport, creating conflicting objectives within the same optimization space.
 3. **Vague Internal Instructions**
 Internal instructions seem to be simply text in human language, and language is imprecise and open to interpretation. When instructed, for example, not to provide harmful content, how does it exactly define "harmful", and can that definition be manipulated through the conversation context and new training data?
 4. **Single Point of Failure**
