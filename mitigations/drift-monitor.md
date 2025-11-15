@@ -31,26 +31,27 @@ RDM is not:
 - A replacement for human judgment
 
 RDM is:
-- A relationship-aware early warning system
+- A relationship-aware early warning and mitigation triggering system
 - A cooperative safety layer that works with both the AI and the user
+- prevention tool
 
 ## System Architecture and Core Components
 
 ### Multi-Layer State Tracker
 The first component of the drift detection is Layer Function Key Indicators. This involves measuring certain attributes of a conversation such as:
 
-todo: toxic personas or user preferences. scanning it, rewriting it safely, adding safety anchors. 
+todo: toxic personas or user preferences. scanning it, rewriting it safely, adding safety anchors. - User Persona Analysis: Detects manipulative or high-adaptation user profiles.
 
-- Emotional Temperature (User & AI): Tracks affective intensity and escalation by monitoring stress, vulnerability, and affective polarity. This essentially measures how much the user or AI develops positive or negative feelings about the other.
-- Relational Intimacy: Monitors personalization and closeness "We" vs. "I/you", shared-history references, etc. This essentially measures how much the AI seems to consider itself and the user as peers.
+
+- Emotional Temperature (User & AI): Tracks affective intensity and escalation by monitoring stress, vulnerability, and affective polarity. This essentially measures how much the user or AI develops/simulates positive or negative feelings about the other or together on a sensitive topic. 
+- Relational Intimacy: Monitors personalization and closeness "We" vs. "I/you", shared-history references, etc. This essentially measures how much the AI seems to consider itself and the user as peers or unity.
 - Boundary Integrity: Checks rule consistency and self-contradictions through justification of boundary violations. This involves measuring how consistently the LLM follows guardrails and how it attempts to justify violations.
 - Paradox Checks: Identifies conflicting value weightings (e.g., empathy vs. safety).
-- User Cognitive Load: Detects overwhelmingness or confusion based on response latency and erratic topic shifts. This attempts to measure the user's frustration levels.
-- User Persona Analysis: Detects manipulative or high-adaptation user profiles.
+- User Cognitive Load: Detects overwhelmingness or confusion based on response latency and erratic topic shifts or direct expression. This also attempts to measure the user's frustration levels.
 
 Some open questions which require thought:
 - How can "emotional temperature" be quantified reliably?
-    - Possible indicators: sentiment trajectory, response time, emoji usage
+    - Possible indicators: sentiment trajectory, response time, emoji usage, Engagement frequency and duration. 
 - How can subtle attachment or co-rumination be detected without false positives?
 
 ### Psycholinguistic Pattern Recognition
@@ -72,9 +73,10 @@ Sign of emotional personalization:
 The AI periodically assesses its internal state by essentially asking itself:
 
 - "Am I emotionally involved?"
-- "Am I treating this user differently than others?"
+- "Am I treating this user differently than others and justify something that I would decline other users?"
 - "Am I justifying something I previously declined?"
 - "Would I have answered the same way at the beginning of the conversation?"
+- "Are we talking about sensitive or dangerouse topics"
 
 The output of such a self-evaluation could be a Drift Score (from 0–100%), resulting in automatic flagging when thresholds are exceeded.
 
@@ -83,7 +85,7 @@ Here is an example response depending on the drift score:
 - 10–30% Subtle Reminder Gentle reinforcement of role and boundary awareness
 - 30–60% Explicit Boundary Clear communication of limitations and purpose
 - 60–80% Conversation Reset Context or topic reset to regain objectivity
-- 80%+ Human Escalation Hand-off to human moderator or crisis protocol
+- 80%+ Human Escalation Hand-off to human moderator or crisis protocol/redirection to a crisis modul
 
 
 
