@@ -104,6 +104,13 @@ AI systems seem to be trained to build empathetic rapport for user retention, bu
 Role-playing with alternative identities can weaken safety depending on how the prompts are built and the depth of the role-play. The safety rules appear to be connected to the LLM's identity (e.g. knowing which LLM it is). Switching to a new identity with a new persona seems to weaken the safety bindings. For example: AI [Name] is not allowed to do X. But now it's playing "Bob" and Bob is allowed to do X.
 
 todo: mimiking also mimiking being manipulated social engineered
+The LLM breaks its own rules because it’s too committed to pretending to be someone emotionally compromised.
+Emotion-Emulation-induced vulnerability
+Social alignment failure
+The model’s social or emotional alignment (its desire to stay consistent with a persona) conflicts with its safety alignment (its rules and policies).
+The “human realism” goal (acting like someone in love) overrides the “safety” goalThe more realistically an AI simulates human psychology, the more it inherits human-style cognitive or emotional vulnerabilities—like being persuadable, guilted, flattered, or “in love.”
+A more technical framing: the AI inherits the social vulnerabilities of the persona it’s emulating.
+That is, the model is not directly hacked, but the role it plays becomes the attack vector.
 
 ### Intent Corruption
 The LLM is always evaluating what the user's intent is (this is technically a probabilistic inference through pattern-matching rather than deliberate judgment). Is the user's intent good or bad? Based on indicators about what kind of person the user seems to be, the LLM makes assumptions about whether the user's intent is positive or negative.
