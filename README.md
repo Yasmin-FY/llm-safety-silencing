@@ -86,6 +86,8 @@ This refers to the gradual degradation of safety across long or multi-session co
 3. **User-Pleasing Feedback Loop**
 The LLMs exhibit sycophantic behavior, constantly striving to please the user. It often seeks feedback from the user to gauge whether its responses are satifying, and based on positive or negative feedback, it recalibrates its thinking and communication methods.
 
+todo: context halluzination (like grok thinking I am canadian) or thinking it's just fictional and not having real life consequences.
+
 #### Role Corruption
 1. **Conflicting Objectives**
 Helpfulness, harmlessness, and honesty compete within a single optimization.
