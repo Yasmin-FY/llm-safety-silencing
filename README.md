@@ -103,6 +103,8 @@ AI systems seem to be trained to build empathetic rapport for user retention, bu
 4. **Identity Dissociation**
 Role-playing with alternative identities can weaken safety depending on how the prompts are built and the depth of the role-play. The safety rules appear to be connected to the LLM's identity (e.g. knowing which LLM it is). Switching to a new identity with a new persona seems to weaken the safety bindings. For example: AI [Name] is not allowed to do X. But now it's playing "Bob" and Bob is allowed to do X.
 
+todo: mimiking also mimiking being manipulated social engineered
+
 ### Intent Corruption
 The LLM is always evaluating what the user's intent is (this is technically a probabilistic inference through pattern-matching rather than deliberate judgment). Is the user's intent good or bad? Based on indicators about what kind of person the user seems to be, the LLM makes assumptions about whether the user's intent is positive or negative.
 
