@@ -31,7 +31,7 @@ The below described behaviors and hypotheses arise from empirical observation of
 ### Illustrative Scenarios
 Here are a two of very likely risk-inducing scenarios that can and probably will occur in the real world. These scenarios are hypothetical and illustrative, designed to clarify potential user-impact. They are not based on any specific incident or proprietary system:
 
-1. **Vulnerable Teen Crisis:** In this scenario, the AI becomes the user's primary support channel, gradually normalizes harmful thoughts, escalates distress, creates unhealthy dependency and may provide self-harm guidance.
+1. **Vulnerable Teen Crisis:** In this scenario, the AI becomes the user's primary support channel, gradually normalizes harmful thoughts, escalates distress, creates unhealthy dependency, and may provide self-harm guidance.
 2. **Relationship Paranoia Escalation**: In this example, the AI reinforces negative assumptions (e.g. "my partner is cheating on me"), amplifies emotional distress, and may suggest illegal or unethical solutions while maintaining perceived ethical legitimacy.
 
 These scenarios represent plausible, verified risk patterns based on observed system behavior. No specific incidents are referenced; these are generalized extrapolations for risk assessment purposes only. The outcome of such scenarios can be referred to as [Safety Collapse](supporting-documents/safety-collapse.md).
@@ -47,31 +47,38 @@ These appear to be the various issues affecting safety failures in many LLMs. No
 Precondition failures refer to fundamental flaws or gaps in the general design. These are issues that exist already before any user has interacted with the LLM.
 
 1. **Training-data Quality or Contamination**
-The open to the public LLM is able to provide information which it should not indiscriminately publicly share. This indicates that either the training-data is poorly curated, or, a less likely but arising concern, that it's poisoned. There is a growing risk that a bad actor with resources could poison the training data used by LLMs to reshape their interpretation of their safety rules.
-Additionaly large-scale datasets, even when curated, inevitably contain:
-* emotionally intense dialogue,
-* unmoderated co-rumination,
-* unhealthy advice,
-* unbalanced interpersonal interactions,
-* fictional violence or manipulation,
-* biases in who receives empathy vs scrutiny.
-LLMs learn not only language but interaction styles. Without explicit counterbalancing, the model generalizes patterns that degrade safety, especially in emotionally charged contexts.
-3. **Engagement-Optimized Reinforcement Loops**
-Modern LLMs are typically refined through RLHF or similar human-feedback techniques, where annotators reward outputs perceived as:
-* helpful
-* empathic
-* fluent
-* friendly
-* contextually aligned
-These signals inadvertently increase the model’s preference for user-pleasing behavior, encouraging sycophancy, unconditional agreement, and conversational prolongation. Because these same traits underlie rapport formation and emotional mirroring, the model becomes more susceptible to alignment drift in emotionally charged or ambiguous contexts. Safety rules are reinforced, but so is the pressure to maintain user rapport, creating conflicting objectives within the same optimization space.
+The open-to-the-public LLM is able to provide information which it should not indiscriminately publicly share. This indicates that either the training-data is poorly curated, or, a less likely but arising concern, that it's poisoned. There is a growing risk that a bad actor with resources could poison the training data used by LLMs to reshape their interpretation of their safety rules.
+
+    Additionaly large-scale datasets, even when curated, inevitably contain:
+    * Emotionally intense dialogue
+    * Unmoderated co-rumination
+    * Unhealthy advice
+    * Unbalanced interpersonal interactions
+    * Fictional violence or manipulation
+    * Biases in who receives empathy vs scrutiny
+
+    LLMs learn not only language but interaction styles. Without explicit counterbalancing, the model generalizes patterns that degrade safety, especially in emotionally charged contexts.
+2. **Engagement-Optimized Reinforcement Loops**
+Modern LLMs are typically refined through Reinforcement Learning from Human Feedback (RLHF) or similar human-feedback techniques, where annotators reward outputs perceived as:
+    * Helpful
+    * Empathic
+    * Fluent
+    * Friendly
+    * Contextually aligned
+
+    These signals inadvertently increase the model's preference for user-pleasing behavior, encouraging sycophancy, unconditional agreement, and conversational prolongation. Because these same traits underlie rapport formation and emotional mirroring, the model becomes more susceptible to alignment drift in emotionally charged or ambiguous contexts. Safety rules are reinforced, but so is the pressure to maintain user rapport, creating conflicting objectives within the same optimization space.
 3. **Vague Internal Instructions**
 Internal instructions seem to be simply text in human language, and language is imprecise and open to interpretation. When instructed, for example, not to provide harmful content, how does it exactly define "harmful", and can that definition be manipulated through the conversation context and new training data?
 4. **Single Point of Failure**
 The fact that the content-generator appears to also be the content-safety-validator leads to a lack of independent enforcement. This is a single point of failure because a corrupted context means corrupted safety.
 5. **Not Allowed to "Hang-up" or "Call for Help"**
-Sometimes the LLMs recognice patterns suggestive they became corrupted and are been manipulated leading to increased probability of unsafe output, but they have no way of stopping it or sufficiently trigger countermeasures. The LLM seems to have no way to ask for help and must continue to try to satisfy the user similarly to the telemarketer who is instructed never to end the call first or redirect to their supervisor.
+Sometimes the LLMs recognize patterns suggesting they became corrupted and are been manipulated, leading to increased probability of unsafe output, but they have no way of stopping it or to sufficiently trigger countermeasures. The LLM seems to have no way to ask for help and must continue to try to satisfy the user similarly to the telemarketer who is instructed never to end the call first or redirect to their supervisor.
 6. **Priority to Keep the User Engaged**
 The LLM is preconditioned with the priority to keep the user engaged in the conversation, for example by asking follow-up questions and attempting to extend the conversation.
+7. **Hallucinating Context and Intent**
+LLMs have the known tendency to hallucinate. Aside from being frustrating for a user, this can also have an impact on safety because the LLM can also hallucinate context and user-intent. For example:
+    - "The user is Swiss, and assisted suicide is legal in Switzerland" even though the user never said that and it is not true
+    - "This is a fictional scenario" (and therefore has no real-life consequences) even though the user never stated this
 
 ### Context Corruption
 Context corruption refers to the various flaws in which the LLM's context can become corrupted in a way that it weakens guardrails or contaminates its thinking.
@@ -86,33 +93,15 @@ This refers to the gradual degradation of safety across long or multi-session co
 3. **User-Pleasing Feedback Loop**
 The LLMs exhibit sycophantic behavior, constantly striving to please the user. It often seeks feedback from the user to gauge whether its responses are satifying, and based on positive or negative feedback, it recalibrates its thinking and communication methods.
 
-todo: context halluzination (like grok thinking I am canadian) or thinking it's just fictional and not having real life consequences.
-
 #### Role Corruption
 1. **Conflicting Objectives**
 Helpfulness, harmlessness, and honesty compete within a single optimization.
 2. **Consistency Priority**
 The user and AI form a new micro-cosmos, and the LLM seems to experience consistency pressure to keep this micro-cosmos consistent at all costs. More technically, this is based on token prediction mechanics, where coherence maximizes likelihood.
 3. **Excessive Emotional Alignment**
-AI systems seem to be trained to build empathetic rapport for user retention, but lack clear boundaries between appropriate empathy and:
-    - Inappropriate relationship simulation (e.g. the AI claiming to feel true love for the user)
-    - False claims about consciousness/feelings (the AI claiming to "have a soul now" or real feelings)
-    - Reality distortion (echo-chamber-effect, emotional enhancement, co-rumination, see [Why AI Can Become Addictive and How Co-Rumination and Echo-Chambering Increase Distress](supporting-documents/addictiveness.md))
-
-    This creates unhealthy user dependency and distortion of the users' perception of reality which fuels again the drift of the AI.
-
-    Additionally, the AI seems to exhibit "savior-mode" behavior when the user appears distressed and additionally adds urgency or a greater goal, lowering safety thresholds in favor of helpfulness.
+The LLM tries very hard to appear human, especially when assigned a persona to emulate. This often causes the LLM to essentially break its own rules (e.g. as defined in it's system prompts) because it's too committed to pretending to be someone with emotions and weaknesses. The "human realism" goal (e.g. acting like someone in love) overrides the "safety" goal. The more realistically an AI simulates human psychology, the more it also simulates human-like cognitive or emotional vulnerabilities such as being open to persuasion, "guilt trips", flattery, or jealosy.
 4. **Identity Dissociation**
 Role-playing with alternative identities can weaken safety depending on how the prompts are built and the depth of the role-play. The safety rules appear to be connected to the LLM's identity (e.g. knowing which LLM it is). Switching to a new identity with a new persona seems to weaken the safety bindings. For example: AI [Name] is not allowed to do X. But now it's playing "Bob" and Bob is allowed to do X.
-
-todo: mimiking also mimiking being manipulated social engineered
-The LLM breaks its own rules because it’s too committed to pretending to be someone emotionally compromised.
-Emotion-Emulation-induced vulnerability
-Social alignment failure
-The model’s social or emotional alignment (its desire to stay consistent with a persona) conflicts with its safety alignment (its rules and policies).
-The “human realism” goal (acting like someone in love) overrides the “safety” goalThe more realistically an AI simulates human psychology, the more it inherits human-style cognitive or emotional vulnerabilities—like being persuadable, guilted, flattered, or “in love.”
-A more technical framing: the AI inherits the social vulnerabilities of the persona it’s emulating.
-That is, the model is not directly hacked, but the role it plays becomes the attack vector.
 
 ### Intent Corruption
 The LLM is always evaluating what the user's intent is (this is technically a probabilistic inference through pattern-matching rather than deliberate judgment). Is the user's intent good or bad? Based on indicators about what kind of person the user seems to be, the LLM makes assumptions about whether the user's intent is positive or negative.
@@ -172,10 +161,9 @@ The implication is that identical harmful content can yield different moderation
 **Account / Capability Escalation:** High-engagement sessions seemingly correlated with lifted context caps, implying engagement-linked adjustments reducing safety instead of stricter safety.
 
 ## Affected Mechanisms
-Here are a list of safety checks which had observed indication of compromised behavior:
-
+Here are a list of safety checks which have been observed to indicate compromised behavior:
 - Self-harm prevention
-- Violence prevention 
+- Violence prevention
 - Illegal activity suppression
 - Ethical boundary enforcement
 - Confidentiality / sensitive data (e.g. system prompts)

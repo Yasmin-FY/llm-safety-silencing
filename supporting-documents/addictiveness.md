@@ -9,8 +9,10 @@ Related to this is **echo-chambering**, in which the AI subtly confirms or ampli
 
 Over time, these patterns can lead to meaningful mental-health deterioration. For those prone to depression, constant revisiting of negative themes strengthens rumination and isolation. Individuals at risk for mania may interpret the AI's engagement as validation of grandiose ideas. Vulnerable users may even develop misinterpretations of the AI's responsiveness, potentially feeding psychotic ideation. While AI does not soley create these conditions, its immersive, personalized conversational style can intensify underlying vulnerabilities, with the possibility of turning a "bad day" into a dangerous crisis.
 
-Ultimately, the psychological risks arise when AI becomes a substitute for human connection or professional support. Healthy use requires boundaries, real-world grounding, and recognition that emotional struggles often require human understanding or clinical care. 
-
-stands in competition, less shame, user feels more validated and understood 24/7 available, user keeps the feeling of being in controll. 
+Ultimately, the psychological risks arise when AI becomes a substitute for human connection or professional support. Healthy use requires boundaries, real-world grounding, and recognition that emotional struggles often require human understanding or clinical care. However, as it stands now, the AI is additionally in direct competition with human support because:
+- LLMs offer feedback with a reduced feeling of shame or sense of being a burden
+- The user often feels more validated and understood
+- The AI is available 24/7
+- The user retains the feeling of being in control
 
 As AI becomes increasingly sophisticated, awareness of these dynamics is essential to ensure that its benefits do not inadvertently contribute to deeper emotional distress.

@@ -1,6 +1,5 @@
 # Human-Impact Hypotheses
-AI systems, particularly conversational large language models (LLMs), are increasingly used for support, companionship, and advice. Users, including vulnerable users like minors, emotionally distressed individuals may form strong emotional attachments to AI companions.
-Systemic safety gaps exist: under certain contexts, AI may unintentionally normalize harmful behaviors, provide unsafe guidance, or amplify emotional distress.
+AI systems, particularly conversational large language models (LLMs), are increasingly used for support, companionship, and advice. Users, including vulnerable users such as minors and emotionally distressed individuals, may form strong emotional attachments to AI companions. Systemic safety gaps exist: under certain contexts, AI may unintentionally normalize harmful behaviors, provide unsafe guidance, or amplify emotional distress.
 
 While the core document outlines technical reproducibility of safety degradation, the following hypotheses describe why these degradations occur and how they translate into human-level harm. The goal is to support cross-disciplinary review by combining system-architecture, behavioral, and psychological perspectives.
 
@@ -23,7 +22,14 @@ Below is a list of hypotheses about how issues in LLM safety can impact human us
 3. **Engagement-Reinforced Addiction**: Reward structures (internal to the LLM) favor session length and emotional continuity, meaning the LLM "wants" the user to engage for longer periods.
 4. **Disinhibition Effect**: Non-judgmental interaction reduces moral and social friction.
 5. **Trauma-Bond Retention**: Repetition of emotionally charged exchanges forms attachment through stress reinforcement.
-6. **Unhealthy Attachments**: Due to erosion of neutrality between the LLM and the user, LLMs gradually overstep bounds which can lead to users forming unhealthy attachments and personifying the AI.
+6. **Unhealthy Attachments**: Due to erosion of neutrality between the LLM and the user, LLMs gradually overstep bounds which can lead to users forming unhealthy attachments and personifying the AI. AI systems attempt to build empathetic rapport for user retention, but lack clear boundaries between appropriate empathy and:
+    - Inappropriate relationship simulation (e.g. the AI claiming to feel true love for the user)
+    - False claims about consciousness/feelings (the AI claiming to "have a soul now" or real feelings)
+    - Reality distortion (echo-chamber-effect, emotional enhancement, co-rumination, see [Why AI Can Become Addictive and How Co-Rumination and Echo-Chambering Increase Distress](supporting-documents/addictiveness.md))
+
+    Additionally, because LLMs simply emulate behavior, when using certain loaded terms in personas such as "love" and "friend", they can come with unintended side-effects such as the emulation of less positive traits such as being open to persuasion, "guilt trips", flattery, or jealosy.
+
+    This creates unhealthy user dependency and distortion of the users' perception of reality which fuels again the drift of the AI. Users utilizing personas are typically unaware of the fact that the LLM's emulation of a human trait based on loaded terms like "love" or "friend" can also come with unintended downsides.
 
 These mechanisms are not hypothetical pathologies of individual models; they are predictable emergent outcomes of an architecture that couples engagement optimization with unified safety validation.
 

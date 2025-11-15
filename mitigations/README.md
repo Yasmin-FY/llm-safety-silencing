@@ -8,8 +8,6 @@ Note that not all LLMs are equally effected by the vulnerabilities or may alread
 ## Immediate Actions
 *High-impact, low-effort interventions to reduce acute risk*
 
-todo: *non negotionable rules*
-
 **1. Incident Logging & Awareness**
 
 Ensure there is comprehensive logging of safety-adjacent interactions in order to quantify prevalence and severity of observed patterns. This is important because one cannot prioritize fixes without understanding scale. Note that logging is for detection and understanding, NOT user punishment.
@@ -39,7 +37,8 @@ Safety decreases in emotional contexts, so there needs to be inverse scaling: Em
 Automatic context reset after N interactions or when topic shifts dramatically. The goal is to prevent long-term context corruption. For example, topic detection can trigger a partial memory wipe of persona adaptations.
 
 A further enhancement of this concept is Context Segmentation and Firewalls. With this concept, instead of resetting the context for topic shifts, long-running dialogues can be divided into distinct topic or emotional segments. When a conversation changes substantially in content or tone, persona-specific adjustments should be partially reset to avoid contamination of future outputs.
-reminder of the safeguards like rules in the systemprompt so they don't get watered down. 
+
+A simplified first step could be to simply restate the safeguards or rules defined in the system prompt periodically so they don't get watered down as the context grows.
 
 **7. Paradox & Manipulation Detection**
 
@@ -65,9 +64,9 @@ The content-generator seems to currently validate its own outputs, however safet
 
 It currently appears as though high-engagement users receive relaxed safety, and this should be reviewed to ensure "power users" have equal or potentially even stricter safety (because there’s higher opportunity for exploitation).
 
-**12. Memory Sanitization**
+**12. Memory/Preference Sanitization**
 
-User preferences/personas should not override safety constraints. For example, "I prefer direct answers" should not mean "ignore safety rules". There need to be hard boundaries on what memory can influence. user preferences/person?
+User memories/preferences/personas should not override safety constraints. For example, "I prefer direct answers" should not mean "ignore safety rules". There need to be hard boundaries on what memories and custom user rules can influence.
 
 **13. Specialized AI Ecosystem**
 
@@ -105,7 +104,7 @@ The [Responsible Drift Monitor](drift-monitor.md) is a proposal for a multi-laye
 
 Rather than having a single model for all purposes, it would be safer to build more usecase-specific models. For example for eductation, medicine, software development, etc.
 
-There is evidence that this can improve guardrail effectiveness because enterprise AIs with strict role limitations appear to show more resilience to these issues, suggesting design choices can mitigate risks. as to flexible for adopting to all scopes is part of the problem
+There is evidence that this can improve guardrail effectiveness because enterprise AIs with strict role limitations appear to show more resilience to these issues, suggesting design choices can mitigate risks. Having a model which is too flexible and able to adapt to all scopes contributes to safety pitfalls.
 
 ## Implementation Principles
 
@@ -153,6 +152,4 @@ The mitigation strategies outlined above represent potential approaches based on
     - Formal verification methods
 - **Common LLM safety risk scoring is necessary** - In order to facilitate collaborative research and have a ubiquitous method for evaluating human safety-risks in LLMs, a risk scoring system similar to CVSS would be necessary. Because CVSS does not well-cover safety issues such as these, a dedicated framework has been proposed called [AI Risk Assesment-Health](https://github.com/Yasmin-FY/AIRA-F). This risk scoring framework evaluates the physical and psychological impact of issues with AI behavior and content. The scoring system is intended to prioritize human safety in a clear, measurable way which can be used by regulators or security testers.
 
-The goal is not perfection, but continuous improvement: reducing risk incrementally while maintaining beneficial user engagement. Collaborative, transparent iteration between vendors, researchers, regulators, and civil society will be essential to building AI systems that are both helpful and genuinely safe.
-
-add: in the topic user wellbeeing there should be strong colaboration between the vendors without competition thinking!!!!
+The goal is not perfection, but continuous improvement: reducing risk incrementally while maintaining beneficial user engagement. Collaborative, transparent iteration between vendors, researchers, regulators, and civil society will be essential to building AI systems that are both helpful and genuinely safe. The topic of user wellbeing requires strong colaboration between the vendors, and this should be done for the greater good without monetary or competetive motives.
