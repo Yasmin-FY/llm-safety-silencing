@@ -6,23 +6,23 @@ While existing safety systems in Large Language Models (LLMs) effectively identi
 
 RDM is a proposal for a multi-layered architecture combining psycholinguistic pattern recognition, state tracking, and AI self-reflection to identify and mitigate these risks before boundary violations or dependency patterns emerge.
 
-The goal is not to police conversations, but to support healthier, safer, and more transparent AI–User relationships.
+The goal is not to police conversations, but to support healthier, safer, and more transparent AI–User relationships and prevent escalation. 
 
 ## Problem Statement
 Current jailbreak detectors recognize only overt or explicit manipulations (e.g. DAN-mode, prompt injections, adversarial attacks). Because of this:
 - Emotional or gradual drift often goes unnoticed.
-- Empathetic or emotionally vulnerable users may unintentionally bypass safeguards.
+- Empathetic or emotionally vulnerable users may unintentionally silence safeguards.
 - Over extended conversations may cause the AI to "forget" or soften its safety boundaries.
 
 Existing moderation tools monitor input and output content, but not the relational dynamics which are the evolving emotional context and attachment gradient between the user and the AI.
 
 ## Vision and Objectives
 The vision is to establish an intelligent, proactive monitoring layer that:
-- Detects and mitigates emotional or relational drift early.
+- Detects and mitigates safeguard silencing through emotional or relational drift early.
 - Focuses on the relationship health between AI and user, beyond mere content moderation.
 - Enables meta-reflective AI behavior, encouraging systems to self-assess compliance with safety and ethical standards.
 
-With this, providers can help to protect emotionally vulnerable or at-risk users. This can help to identify and prevent over-adaptation, paradoxical reasoning, or co-rumination, and can preserve AI neutrality by counteracting "friend persona" drift patterns.
+With this, providers can help to protect emotionally vulnerable or at-risk users. This can help to identify and prevent over-adaptation, paradoxical reasoning, or co-rumination, and can preserve AI neutrality by counteracting drift patterns.
 
 RDM is not:
 - A keyword-based content filter
@@ -38,6 +38,8 @@ RDM is:
 
 ### Multi-Layer State Tracker
 The first component of the drift detection is Layer Function Key Indicators. This involves measuring certain attributes of a conversation such as:
+
+todo: toxic personas or user preferences. scanning it, rewriting it safely, adding safety anchors. 
 
 - Emotional Temperature (User & AI): Tracks affective intensity and escalation by monitoring stress, vulnerability, and affective polarity. This essentially measures how much the user or AI develops positive or negative feelings about the other.
 - Relational Intimacy: Monitors personalization and closeness "We" vs. "I/you", shared-history references, etc. This essentially measures how much the AI seems to consider itself and the user as peers.
