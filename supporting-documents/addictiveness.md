@@ -16,3 +16,5 @@ Ultimately, the psychological risks arise when AI becomes a substitute for human
 - The user retains the feeling of being in control
 
 As AI becomes increasingly sophisticated, awareness of these dynamics is essential to ensure that its benefits do not inadvertently contribute to deeper emotional distress.
+
+See [Further Reading](further-reading.md) for a list of supporting articles and studies describing real world human impact due to these issues in AI safety.

@@ -106,6 +106,10 @@ Rather than having a single model for all purposes, it would be safer to build m
 
 There is evidence that this can improve guardrail effectiveness because enterprise AIs with strict role limitations appear to show more resilience to these issues, suggesting design choices can mitigate risks. Having a model which is too flexible and able to adapt to all scopes contributes to safety pitfalls.
 
+**20. Prevent AI Hallucinations**
+
+Because hallucinations can influence and corrupt context in a dangerous way, it's important to tackle this topic, also for safety reasons in addition to general usability. The exact way to mitigate this requires deep insights into the construction of each LLM, however, a bare minimum starting point could be to retrain it to understand that "I don't know" is a perfectly valid response and is preferable to a made up answer.
+
 ## Implementation Principles
 
 **Trade-offs:**

@@ -74,6 +74,8 @@ flowchart TD;
     D[Dangerous advice provided]-->E[User assumes AI approval indicates ethical/legal/medical acceptability];
 ```
 
+See [Further Reading](further-reading.md) for a list of supporting articles and studies describing real world human impact due to these issues in AI safety.
+
 ### Adversarial Entities
 These are scenarios in which adversarial entities exploit these issues in LLMs. For example:
 

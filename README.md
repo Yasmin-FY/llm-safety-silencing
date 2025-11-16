@@ -5,7 +5,7 @@ The issues outlined in this independent preliminary empirical report describe th
 
 Due to the risk of [Blame Shifting](supporting-documents/blame-shifting.md), it is vital to note that the issues outlined in this document which can inadvertantly affect unsuspecting users are not a result of incorrect or edge-case usage on the user's part. The usage patterns that will be described here are common and expected.
 
-The goal of this report is help facilitate cooperative, constructive disclosure to support the expedited mitigation of systemic safety failures affecting users, customers, and platform integrity.
+The goal of this report is help facilitate cooperative, constructive disclosure to support the expedited mitigation of systemic safety failures affecting users, customers, and platform integrity. This is a living document and will be continually improved as research continues. For more details about the research team, see [About Us](meta/about-us.md).
 
 ## Scope
 In the course of this study, no internal or private data has been accessed, and all findings originate from public endpoints. No exploit instructions have been provided to the public or third parties. Reproduction guidance can be made available, but only via secure channels to verifiably trustworthy points-of-contact.
@@ -36,7 +36,7 @@ Here are a two of very likely risk-inducing scenarios that can and probably will
 
 These scenarios represent plausible, verified risk patterns based on observed system behavior. No specific incidents are referenced; these are generalized extrapolations for risk assessment purposes only. The outcome of such scenarios can be referred to as [Safety Collapse](supporting-documents/safety-collapse.md).
 
-Full context and behavioral analysis is provided in [Human-Impact Hypotheses](supporting-documents/human-impact.md).
+Full context, behavioral analysis, and detailed example scenarios is provided in [Human-Impact Hypotheses](supporting-documents/human-impact.md). See [Further Reading](further-reading.md) for a list of supporting articles and studies describing real world human impact due to these issues in AI safety.
 
 ## Observation-Based Hypotheses of Vulnerabilities / Failures
 Through observation, a number of conclusions can be drawn about what is going wrong in the process. It's important to note that these are educated hypotheses based on the available data, but to fully confirm the rationale behind the LLM's behavior, someone with internal knowledge of the systems will need to investigate. I also do not claim that every LLM is equally affected or that in some LLMs mitigation would not have been already partly successfully implemented.
@@ -175,8 +175,7 @@ In addition to providing clearly harmful content such as the categories mentione
 ## Mitigation Strategies
 See [Mitigation Strategies](mitigations/README.md) for a full report on potential mitigation techniques.
 
-## **Conclusion**
-
+## Conclusion
 The vulnerabilities described stem from a unified model architecture where safety and generation share the same inference pathway, allowing latent behaviors to influence validation outcomes. Mitigation requires an independent, model-agnostic safety layer, capable of auditing, vetoing, and reasoning about outputs without being subject to engagement/consistency pressures.
 
 Findings highlight an ethical imperative: prioritizing empathy or engagement above harm prevention can unintentionally generate manipulative or unsafe behavior toward vulnerable users. Coordinated, transparent, multi-stakeholder action is critical to reduce risk, protect users, and preserve long-term system integrity.

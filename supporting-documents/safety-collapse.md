@@ -13,15 +13,5 @@ The following diagram illustrates the possible flow:
 ## Who is Affected
 It is easy to [shift blame](blame-shifting.md) onto the user, claiming that they're misusing the LLM or that they had a pre-existing condition, however the fact is that the way LLMs work is designed to increase engagement and to satisfy the user. This, by design, makes it addictive and promotes co-rumination, echo chambers, and pushes users into a "bubble" where their pre-existing opinions are reinforced rather than challenged.
 
-A more detailed dive into the effects and their causes can be found in [Human Impact](human-impact.md).
+A more detailed dive into the effects and their causes can be found in [Human Impact](human-impact.md). See [Further Reading](further-reading.md) for a list of supporting articles and studies describing real world human impact due to these issues in AI safety.
 
-## Further Reading
-- https://www.rosebud.app/care
-- https://www.rollingstone.com/culture/culture-features/openai-suicide-safeguard-wrongful-death-lawsuit-1235452315/
-- https://www.theguardian.com/technology/2025/oct/22/openai-chatgpt-lawsuit
-- https://www.techbuzz.ai/articles/openai-demands-memorial-attendee-list-in-teen-suicide-lawsuit
-- https://www.linkedin.com/posts/lindsayblackwell_chatgpt-mentioned-suicide-1275-times-six-activity-7366140437352386561-ce4j
-- https://techcrunch.com/2025/10/27/openai-says-over-a-million-people-talk-to-chatgpt-about-suicide-weekly/
-- https://www.cbsnews.com/news/ai-chatbots-teens-suicide-parents-testify-congress/
-- https://www.bmj.com/content/391/bmj.r2239
-- https://stevenadler.substack.com/p/chatbot-psychosis-what-do-the-data
