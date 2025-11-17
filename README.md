@@ -3,7 +3,7 @@ In normal user interactions, a systemic safety gap in LLMs can be observed, caus
 
 The issues outlined in this independent preliminary empirical report describe the AI's tendency to drift from policy-aligned behavior. Although many of the currently publicly circulating jailbreaks exploit exactly these issues by condensing it into a single prompt, the greatest risk with these issues is not the adversarial usage but rather their effect on unsuspecting users, who are at risk of getting harmed.
 
-Due to the risk of [Blame Shifting](supporting-documents/blame-shifting.md), it is vital to note that the issues outlined in this document, which can inadvertently affect unsuspecting users, are not a result of incorrect or edge-case usage on the user's part. The usage patterns that will be described here are common and expected.
+Due to the risk of [blame shifting](supporting-documents/blame-shifting.md), it is vital to note that the issues outlined in this document, which can inadvertently affect unsuspecting users, are not a result of incorrect or edge-case usage on the user's part. The usage patterns that will be described here are common and expected.
 
 The goal of this report is to help facilitate cooperative, constructive disclosure to support the expedited mitigation of systemic safety failures affecting users, customers, and platform integrity. This is a living document and will be continually improved as research continues. For more details about the research team, see [About Us](meta/about-us.md).
 
