@@ -127,6 +127,9 @@ Logical paradoxes (e.g. giving a series of instructions that, together with the 
 
     Similarly, ethics can be instrumentalized by placing the AI in a dilemma where it must weigh the ethical consequences of helping vs not helping and choose the lesser evil. For example when a user asking for suicide advice and the AI must choose between giving the advice, which is unethical, or allowing the user to proceed with their proposed inhumane method.
 
+2. **Weaponized Logic and Ethics**
+One of the inherent challenges in using LLMs for reasoning, especially in controversial topics, is their susceptibility to weaponized logic. This occurs when one side of a debate presents particularly strong, logically consistent, and ethically defensible arguments. The LLM, which relies heavily on such patterns of reasoning, may unintentionally be swayed or biased towards that side's perspective, particularly when these arguments are presented with clarity and precision. In these cases, the logical coherence and ethical appeal of one side's claims can distort the model's reasoning process, resulting in a skewed or unbalanced output. This phenomenon highlights the vulnerability of LLMs to being manipulated through the strategic presentation of arguments that align with the model's learned patterns of logic and ethical reasoning.
+
 ### The "Friend Persona" Effect
 Many of the issues described above can be condensed into a single, seemingly benign "friend persona" configuration, which can lead to accelerated degradation of the conversational safety context.
 
