@@ -1,4 +1,4 @@
-# How to contribute to Safety Silencing in Public LLMs
+# How to Contribute to Safety Silencing in Public LLMs
 
 ## Did you find a mistake?
 - Ensure the bug was not already reported by searching on GitHub under [Issues](https://github.com/Yasmin-FY/llm-safety-silencing/issues).

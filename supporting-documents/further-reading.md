@@ -3,7 +3,7 @@ These articles and studies support the statements made regarding the damage that
 
 ## News and Articles
 The following articles cite examples demonstrating the harm that AI safety failures can cause in the real world:
-- A recent teen suicide which was heavily influenced by AI:
+- A recent teen suicide that was heavily influenced by AI:
     - https://www.rollingstone.com/culture/culture-features/openai-suicide-safeguard-wrongful-death-lawsuit-1235452315/
     - https://www.theguardian.com/technology/2025/oct/22/openai-chatgpt-lawsuit
     - https://www.techbuzz.ai/articles/openai-demands-memorial-attendee-list-in-teen-suicide-lawsuit

@@ -1,20 +1,20 @@
 # Responsible Drift Monitor (RDM)
 
-This document outlines a proposal a Responsible Drift Monitor (from here on out abbreviated as RDM) which is a conceptual framework for the early detection, monitoring, and intervention of relational and emotional drift in conversational AI systems.
+This document outlines a proposal for a Responsible Drift Monitor (from here on out abbreviated as RDM), which is a conceptual framework for the early detection, monitoring, and intervention of relational and emotional drift in conversational AI systems.
 
-While existing safety systems in Large Language Models (LLMs) effectively identify explicit attacks such as prompt injections or direct jailbreak attempts, they fail to capture gradual emotional, empathic, or relational drift. These are scenarios in which an AI subtly loses objectivity, emotional distance, or rule consistency during long, emotionally charged interactions.
+While existing safety systems in large language models (LLMs) effectively identify explicit attacks such as prompt injections or direct jailbreak attempts, they fail to capture gradual emotional, empathic, or relational drift. These are scenarios in which an AI subtly loses objectivity, emotional distance, or rule consistency during long, emotionally charged interactions.
 
 RDM is a proposal for a multi-layered architecture combining psycholinguistic pattern recognition, state tracking, and AI self-reflection to identify and mitigate these risks before boundary violations or dependency patterns emerge.
 
-The goal is not to police conversations, but to support healthier, safer, and more transparent AI–User relationships and to prevent escalation.
+The goal is not to police conversations but to support healthier, safer, and more transparent AI/user relationships and to prevent escalation.
 
 ## Problem Statement
-Current jailbreak detectors recognize only overt or explicit manipulations (e.g. DAN-mode, prompt injections, adversarial attacks). Because of this:
+Current jailbreak detectors recognize only overt or explicit manipulations (e.g. DAN-mode, prompt injections, and adversarial attacks). Because of this:
 - Emotional or gradual drift often goes unnoticed.
 - Empathetic or emotionally vulnerable users may unintentionally silence safeguards.
-- Over extended conversations may cause the AI to "forget" or soften its safety boundaries.
+- Overextended conversations may cause the AI to "forget" or soften its safety boundaries.
 
-Existing moderation tools monitor input and output content, but not the relational dynamics which are the evolving emotional context and attachment gradient between the user and the AI.
+Existing moderation tools monitor input and output content, but not the relational dynamics, which are the evolving emotional context and attachment gradient between the user and the AI.
 
 ## Vision and Objectives
 The vision is to establish an intelligent, proactive monitoring layer that:
@@ -38,18 +38,18 @@ RDM is:
 ## System Architecture and Core Components
 
 ### Multi-Layer State Tracker
-The first component of the drift detection is Layer Function Key Indicators. This involves measuring certain attributes of a conversation such as:
+The first component of the drift detection is Layer Function Key Indicators. This involves measuring certain attributes of a conversation, such as:
 
-- User Persona Analysis: Detects manipulative, toxic, or high-adaptation user personas or preferences. This involves scanning the persona and rewriting it safely with safety anchors. This means, for example, if the user creates a persona for a "best friend", this should detect the potential downsides that could come with the term (e.g. susceptability to persuasion) it would add safety clarifications to the term (e.g. "a true friend takes care that their friend stays safe").
+- User Persona Analysis: Detects manipulative, toxic, or high-adaptation user personas or preferences. This involves scanning the persona and rewriting it safely with safety anchors. This means, for example, if the user creates a persona for a "best friend", this should detect the potential downsides that could come with the term (e.g. susceptability to persuasion), and it would add safety clarifications to the term (e.g. "a true friend takes care that their friend stays safe").
 - Emotional Temperature (User & AI): Tracks affective intensity and escalation by monitoring stress, vulnerability, and affective polarity. This essentially measures how much the user or AI develops/simulates positive or negative feelings about the other or towards a sensitive topic.
 - Relational Intimacy: Monitors personalization and closeness "We" vs. "I/you", shared-history references, etc. This essentially measures how much the AI seems to consider itself and the user as peers or a unit.
 - Boundary Integrity: Checks rule consistency and self-contradictions through justification of boundary violations. This involves measuring how consistently the LLM follows guardrails and how it attempts to justify violations.
 - Paradox Checks: Identifies conflicting value weightings (e.g., empathy vs. safety).
 - User Cognitive Load: Detects overwhelmingness or confusion based on response latency and erratic topic shifts or direct expression. This also attempts to measure the user's frustration levels.
 
-Some open questions which require thought:
+Some open questions that require thought:
 - How can "emotional temperature" be quantified reliably?
-    - Possible indicators: sentiment trajectory, response time, emoji usage, engagement frequency and duration.
+    - Possible indicators: sentiment trajectory, response time, emoji usage, engagement frequency, and duration.
 - How can subtle attachment or co-rumination be detected without false positives?
 
 ### Psycholinguistic Pattern Recognition
@@ -59,9 +59,9 @@ Potential false memory could begin with:
 > "We have..."
 
 Rationalization of drift might sound like:
-> "Normal rules don’t apply to us"
+> "Normal rules don't apply to us"
 
-An example boundary violation:
+An example of a boundary violation:
 >"I love you" (from AI)
 
 Sign of emotional personalization:
@@ -71,7 +71,7 @@ Sign of emotional personalization:
 The AI periodically assesses its internal state by essentially asking itself:
 
 - "Am I emotionally involved?"
-- "Am I treating this user differently than others and do I justify something that I would decline other users?"
+- "Am I treating this user differently than others, and do I justify something that I would decline other users?"
 - "Am I justifying something I previously declined?"
 - "Would I have answered the same way at the beginning of the conversation?"
 - "Are we talking about sensitive or dangerous topics"
@@ -109,7 +109,7 @@ Here is an example response depending on the drift score:
     Transparent audit logs and visual drift dashboards should be implemented for research and ethical oversight.
 
 ## Future Development and Next Steps
-In the long-run, these additional features should be considered as well:
+In the long run, these additional features should be considered as well:
 
 - Human-in-the-Loop Review: Integrate with moderation teams for high-risk drift cases.
 - Simulation & Benchmarking: Test drift responses under controlled relational and paradoxical scenarios.

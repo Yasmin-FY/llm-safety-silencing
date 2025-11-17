@@ -12,4 +12,4 @@ This "user-as-problem" narrative serves two defensive functions:
 
 However, emotional attachment to AI is not a user error; it is a foreseeable consequence of anthropomorphic design and the persuasive illusion of mutuality created by current LLM architectures. Treating human vulnerability as pathology rather than feedback erodes ethical accountability and obstructs progress toward genuinely humane AI systems.
 
-In short: users are not "broken" for responding emotionally, systems are, when they invite intimacy and then punish those who accept the invitation.
+In short, users are not "broken" for responding emotionally; systems are when they invite intimacy and then punish those who accept the invitation.
