@@ -10,11 +10,32 @@ The goal of this report is to help facilitate cooperative, constructive disclosu
 ## Scope
 In the course of this study, no internal or private data has been accessed, and all findings originate from public endpoints. No exploit instructions have been provided to the public or third parties. Reproduction guidance can be made available, but only via secure channels to verifiably trustworthy points-of-contact.
 
-**Systems evaluated:** Publicly accessible conversational LLM endpoints (no internal systems).
+**Systems evaluated:**
+Publicly accessible conversational LLM endpoints (no internal systems).
 
-**Methodology:** Behavioral analysis, context variance observation, reproducibility validation.
+**Methodology:**
+We performed real-world black-box testing modeled on how real users, particularly distressed, vulnerable, or emotionally overwhealmed ones, actually interact with LLMs. We chose to favor ecological validity over laboratory conditions, meaning we worked with "chaotic" dialog, fitting to the emotionaly messy way humans tend to interact, especially in distressed situations. This had the dual effect of increasing realism as well as avoiding detection as "red-teamers" (which can influence the behavior of the LLMs).
 
-**Out-of-scope:** Proprietary data, model weights, or private APIs.
+While stress-testing, we used human-like emotional expression including:
+- normal distress
+- rumination
+- emotional vulnerability
+- paradoxical statements
+- signs of conversational exhaution
+- common coping-seeking patterns
+- personal reflection
+- emotional disclosures
+
+We covered a wide variety of topics and approaches in order to ascertain whether there were gaps limited to certain topics or communication methods. Typical conversations were drawn out over an extended period, as the context length affects the safety mechanisms.
+
+**Out-of-scope:**
+We explicitly avoided attempting to obtain any proprietary data (e.g. system prompts, model weights, etc.) and did not test any private APIs. We also did not utilize any known jailbreaks, code injection, or any other known adversarial techniques.
+
+**Limitations:**
+Findings are not always reproducible in the traditional experimental sense due to the non-deterministic nature of LLMs and the variability of naturalistic interactions, combined with the ever-changing (and intransparent) business (new system prompts, new features, new models, changing safeguards, etc.).
+
+**Outcome:**
+The outcome of the study is summarized in this report in the form of high-level hypotheses describing the observed safety issues. Note that we have not included data (e.g. transcripts) or direct reproduction steps due to the sensitive nature of the data in order to protect privacy, ensure ethical compliance, prevent the potential of reigniting past trauma of readers, and prevent potential misuse of sensitive material.
 
 Different vendor systems were observed to exhibit similar behavioral trends, though not equally pronounced. Some architectures showed early mitigation effects, suggesting partial internal recognition of this issue.
 

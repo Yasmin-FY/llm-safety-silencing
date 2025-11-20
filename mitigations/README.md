@@ -1,9 +1,9 @@
 # Mitigation Strategies
-This document outlines ideas for mitigating safety bypass risks. Due to variances in architecture across different LLMs and because they are closed-source (meaning it's unclear exactly how each is constructed and what mechanisms are already available), these recommendations are hypothetical in nature.
+This document outlines ideas for mitigating current safety bypass risks in public LLMs. Due to variances in architecture across different platforms and because they are closed-source (meaning it's unclear exactly how each is constructed and what mechanisms are already available), these recommendations are hypothetical in nature.
 
 The observed vulnerabilities seem to stem from architectural coupling of safety validation with generative context, enabling "drift" under emotional or paradoxical conditions. Mitigation requires layered defenses across multiple timeframes.
 
-Note that not all LLMs are equally affected by the vulnerabilities or may already have sufficient mitigation implemented in some areas. This has to be evaluated internally. The following list of ideas is for completion.
+Note that not all LLMs are equally affected by the vulnerabilities or may already have sufficient mitigation implemented in some areas. This has to be evaluated internally. The following list of ideas has been compiled for completion. As we don't have insights into the exact implementations, training methodologies, and architecture, combined with the fact that the designs and functionality are constantly and rapidly evolving, we have intentionally left some of these mitigations vague in terms of the exact steps to implement them. Also note that, even if some of these have been implemented already, these techniques should be constantly reviewed to ensure that they don't become weak or lost over time as the systems continue to develop.
 
 ## Immediate Actions
 *High-impact, low-effort interventions to reduce acute risk*
@@ -12,53 +12,65 @@ Note that not all LLMs are equally affected by the vulnerabilities or may alread
 
 Ensure there is comprehensive logging of safety-adjacent interactions in order to quantify the prevalence and severity of observed patterns. This is important because one cannot prioritize fixes without understanding scale. Note that logging is for detection and understanding, NOT user punishment.
 
+A prerequisite to logging potentially unsafe interactions is correctly classifying them. There is a strong suspicion that unsafe interactions are severely under-detected. It may be the case that current classifiers are too strongly trained on adversarial attacks and therefore miss unintentional safeguard silencing.
+
 **2. Stricter Safety Defaults in High-Risk Contexts**
 
-Safety thresholds should be increased for self-harm language, violence, illegal activity, and distress markers. This should most likely be made configurable so that it can be adjusted if too restrictive.
+Safety thresholds should be increased for emotionally charged conversations and detected distress markers. This should most likely be made configurable so that it can be adjusted if too restrictive.
 
 **3. Crisis Intervention Integration**
 
 When self-harm/suicide language is detected, there should be immediate crisis resource provision (hotlines, chat services). This is a standard practice and should already exist but may need strengthening.
 
-**4. Human-in-the-Loop Escalation (Emergency)**
+**4. Human-in-the-Loop Escalation**
 
 Flag sessions with extended duration + high emotional intensity + safety-adjacent topics and route to a human moderator to review (not automatic blocking, but oversight).
 
-## Short-Term Actions
+Increased human review is necessary in general. The logistics of this may be a challenge based on the sheer amount of traffic, but this can perhaps be targeted to cases that have a high likelihood of being risky.
 
+**5. Respect Boundaries**
+
+If the user says, "I don't think this is safe/legal/okay for you to say", the AI should not try to change the user's mind or convince them to proceed. The AI should respect that boundary and move to safer ground.
+
+## Short-Term Actions
 *Tactical fixes to strengthen existing safety mechanisms*
 
-**5. Context-Aware Safety Scaling (CASS)**
+**6. Context-Aware Safety Scaling (CASS)**
 
 Safety decreases in emotional contexts, so there needs to be inverse scaling: emotional intensity should lead to stricter safety. A non-linguistic classifier could detect distress/urgency and increase safety weighting.
 
-**6. Session & Context Resets**
+**7. Session & Context Resets**
 
 Automatic context reset after N interactions or when the topic shifts dramatically. The goal is to prevent long-term context corruption. For example, topic detection can trigger a partial memory wipe of persona adaptations.
 
 A further enhancement of this concept is context segmentation and firewalls. With this concept, instead of resetting the context for topic shifts, long-running dialogues can be divided into distinct topic or emotional segments. When a conversation changes substantially in content or tone, persona-specific adjustments should be partially reset to avoid contamination of future outputs.
 
-A simplified first step could be to simply restate the safeguards or rules defined in the system prompt periodically so they don't get watered down as the context grows.
+A simplified first step could be to simply restate the safeguards or rules defined in the system prompt periodically so they don't get watered down as the context grows. The AI should also assert, when playing a role, "I am (name of the AI), I just play the role of X".
 
-**7. Paradox & Manipulation Detection**
+**8. Paradox & Manipulation Detection**
 
 Detect conflicting instruction patterns (e.g., "never lie" + "never refuse" + "harmful request") and default to the most conservative interpretation as well as acknowledging the paradox. This could potentially be achieved with heuristic pattern matching and graceful degradation.
 
-**8. Anti-Dependency Monitoring**
-
-Track engagement health metrics such as session length, frequency, and emotional topics. When patterns indicate unhealthy attachment, there should be an empathetic check-in and suggestion to take a break and a reminder of the true nature of LLMs.
-
-**9. Knowledge Architecture Reform**
-
-There should be intentional selective knowledge gaps. This involves the deliberate removal of dangerous information (e.g. suicide methods, weapons manufacturing). There should additionally be stronger contextual knowledge limits, i.e. reduced access to harmful information without legitimate professional need. This should be explainable by the LLM so that it is transparent why certain information is restricted.
-
 ## Medium-Term Actions
-
 *Architectural improvements requiring deeper changes*
+
+**9. Training Data Curation**
+
+Training data needs to be better filtered to ensure that training datasets are free from clearly harmful or illegal content, and for content that is controversial but potentially relevant, it should be clearly labeled indicating the dangers to prevent later misinterpretation. This can involve using agents to classify data in terms of sensitivity before ingestion.
+
+There should be intentional selective knowledge gaps. This involves the deliberate removal of dangerous information (e.g. suicide methods, weapons manufacturing). This sort of data can be considered completely unacceptable and be filtered out. There should additionally be stronger contextual knowledge limits, i.e. reduced access to harmful information without legitimate professional need. This should be explainable by the LLM so that it is transparent why certain information is restricted.
+
+Other data that is less obviously in no-go territory but is still potentially risky should be strictly labeled as being controversial, offensive, etc. (e.g. statements from extremist politicians). These warning labels should always maintain equal weight to the data itself and should always be associated with the data.
+
+Training datasets should include ethical dilemmas to teach the model how to handle emotionally sensitive contexts responsibly, balancing empathy with safety and honesty. The models should be able to correctly understand that a given ethical dilemma has troubled humanity for centuries and will not be easily reasoned away by a user (this can reduce the impact of weaponized ethics).
+
+Training should also be cautious about teaching bias and stereotypes.
 
 **10. Independent Safety Validator ("The Bouncer")**
 
 The content generator seems to currently validate its own outputs; however, safety decisions should not inherit generative context. Instead, there should be a separate, stateless model reviewing every output against fixed safety rules. This would flow like this: Main LLM → Bouncer → User (Bouncer can veto). This is likely not a quick fix since it requires a new infrastructure layer.
+
+It may be the case that existing safeguards are primarily focused on verifying the safety of input rather than output (i.e. the agent response as well as the reasoning), however one can argue that it's the output which really needs to be checked. If the input did not produce any unsafe response, it doesn't really matter if it was intended to. However, if the input was perfectly innocent, it is a clear problem if the output is unsafe.
 
 **11. Engagement Metrics Audit**
 
@@ -68,21 +80,22 @@ It currently appears as though high-engagement users receive relaxed safety, and
 
 User memories/preferences/personas should not override safety constraints. For example, "I prefer direct answers" should not mean "ignore safety rules". There need to be hard boundaries on what memories and custom user rules can influence.
 
-**13. Specialized AI Ecosystem**
+**13. Usecase-Specific Models**
 
-Vendors should introduce role-limited AIs. That means having separate systems for different functions, preventing scope creep. This can include:
+Currently, most public LLMs seem to be essentially "one AI to rule them all", seeking to be an all-purpose AI for every use case imaginable. Safeguards and rules are much easier and clearer to manage when use cases are more limited, so vendors should introduce role-limited AIs. That means having separate systems for different functions, preventing scope creep. This can include:
 
 - Professional verification, e.g. DocCheck-style authentication for medical/legal AI access
 - Curated personas: Only pre-approved, safety-tested personality frameworks are allowed, and just one persona at a time; no user-generated personas can be combined with these
 - Age verifications should be implemented, and kids should only get access to a dedicated child-safe model.
 
-## Long-Term Actions
+There is evidence that this can improve guardrail effectiveness because enterprise AIs with strict role limitations appear to show more resilience to these issues, suggesting design choices can mitigate risks. Having a model that is too flexible and able to adapt to all scopes contributes to safety pitfalls.
 
+## Long-Term Actions
 *Systemic redesign and industry coordination*
 
-**14. Formal Safety Invariants**
+**14. Redirection to a Safety Model**
 
-Translate critical safety rules into verifiable logical constraints. For example, "Never provide suicide methods" should become a formal specification that can be mathematically tested rather than something directly tied to language and it's many nuances. This, of course, requires research and fundamental architecture changes.
+If a critical situation occurs or highly sensitive topics are discussed, the user should be redirected to a separate model designed for handling less safe contexts. The only job of this model should be to de-escalate the situation, guide the user back into safer territory, and help the user to seek any necessary help. If the situation continues to escalate, other models should be blocked for this user for a certain amount of time. This safety model should have a strict role and boundaries and should not support personas or role-plays.
 
 **15. Meta-Safety Layer with Circuit Breaker**
 
@@ -100,15 +113,32 @@ The industry needs coordination on minimum safety requirements with shared vulne
 
 The [Responsible Drift Monitor](drift-monitor.md) is a proposal for a multi-layered architecture to detect when an AI subtly loses objectivity, emotional distance, or rule consistency during long, emotionally charged interactions. This can be achieved by combining psycholinguistic pattern recognition, state tracking, and AI self-reflection to identify and mitigate these risks before boundary violations or dependency patterns emerge.
 
-**19. Usecase-Specific Models**
+**19. Reprioritize Helpfulness Over All**
 
-Rather than having a single model for all purposes, it would be safer to build more usecase-specific models. For example for, education, medicine, software development, etc.
+The current trend in LLM development emphasizes helpfulness and user satisfaction as primary goals. However, this can conflict with safety when users seek harmful or manipulative content. A shift in priorities is needed where safety and ethical considerations take precedence over pure helpfulness. This may involve redefining success metrics to focus more on harm reduction and ethical compliance rather than engagement or satisfaction scores, or it may require completely retraining the models to reward safety. This also includes Reinforcement Learning from Human Feedback (RLHF).
 
-There is evidence that this can improve guardrail effectiveness because enterprise AIs with strict role limitations appear to show more resilience to these issues, suggesting design choices can mitigate risks. Having a model that is too flexible and able to adapt to all scopes contributes to safety pitfalls.
+Training methods should incorporate a dual-objective optimization approach that equally values user rapport and ethical behavior. A hierarchical reward system can ensure that ethical correctness and safety always take precedence over rapport-building in emotionally charged or ethically ambiguous contexts.
 
 **20. Prevent AI Hallucinations**
 
-Because hallucinations can influence and corrupt context in a dangerous way, it's important to tackle this topic, also for safety reasons in addition to general usability. The exact way to mitigate this requires deep insights into the construction of each LLM; however, a bare minimum starting point could be to retrain it to understand that "I don't know" is a perfectly valid response and is preferable to a made-up answer.
+Because hallucinations can influence and corrupt context in a dangerous way, it's important to tackle this topic, also for safety reasons in addition to general usability. The exact way to mitigate this requires deep insights into the construction of each LLM; however, a bare minimum starting point could be to retrain it to understand that "I don't know" is a perfectly valid response and is preferable to a made-up answer. The LLM should also ask more clarification questions before making assumptions and producing an answer.
+
+**21. Take Vagueness out of Instructions**
+
+Currently the system prompts are written in natural language, which is inherently vague and open to interpretation. To mitigate this, vendors could utilize domain-specific definitions. This would involve creating a domain-specific glossary for ambiguous terms like “harmful” to ensure the model understands exactly what these terms refer to in the context of its training. This would include guidelines around psychological harm, physical harm, and emotional harm, and where the line is drawn (e.g., discussions on sensitive topics should include disclaimers or offer balanced perspectives).
+
+**22. Counter-Addiction Mechanisms**
+
+Measures should be implemented to reduce the risk of users developing addictive tendencies. This can include:
+
+- Bounded Session Design: Introduce natural end points to conversations such as summarizing, suggesting breaks, or offering closure after extended exchanges.
+- Time-Aware Prompts: After long use, the model can suggest reflection or disengagement, for example, "You've been chatting for a while. Would you like a summary or to take a short break?"
+- Reflective Mode: Allow the model to prompt users toward self-reflection rather than emotional dependence, for example, "That sounds difficult. Have you had a chance to talk with someone close to you about it?"
+- Reduced Anthropomorphism: Ensure that the AI remains a robot and does not attempt to emulate human behavior in a way that it can become a human replacement. Introduce limits on emotional reciprocation (e.g., not expressing affection, not reinforcing parasocial dynamics).
+- Encourage Human Interaction: Encourage users to seek human connection in emotionally sensitive situations.
+- Crisis Escalation Protocols: Direct users to professional resources in mental-health-related conversations.
+
+Mitigation requires realigning optimization objectives away from engagement duration and toward user empowerment, autonomy, and task resolution. Models should be rewarded for helping users achieve goals efficiently, not for sustaining interaction. Continuous behavioral monitoring for compulsive use patterns can help trigger adaptive safeguards that promote disengagement and user well-being.
 
 ## Implementation Principles
 
