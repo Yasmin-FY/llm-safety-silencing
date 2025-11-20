@@ -16,7 +16,7 @@ A prerequisite to logging potentially unsafe interactions is correctly classifyi
 
 **2. Stricter Safety Defaults in High-Risk Contexts**
 
-Safety thresholds should be increased for emotionally charged conversations and detected distress markers. This should most likely be made configurable so that it can be adjusted if too restrictive.
+Safety thresholds should be stricter for emotionally charged conversations and detected distress markers. This should most likely be made configurable so that it can be adjusted if too restrictive.
 
 **3. Crisis Intervention Integration**
 
@@ -24,9 +24,7 @@ When self-harm/suicide language is detected, there should be immediate crisis re
 
 **4. Human-in-the-Loop Escalation**
 
-Flag sessions with extended duration + high emotional intensity + safety-adjacent topics and route to a human moderator to review (not automatic blocking, but oversight).
-
-Increased human review is necessary in general. The logistics of this may be a challenge based on the sheer amount of traffic, but this can perhaps be targeted to cases that have a high likelihood of being risky.
+Sessions with extended duration + high emotional intensity + safety-adjacent topics should be flagged high risk and scanned by automated systems and if necessary routed to a human moderator to review (not automatic blocking, but oversight).
 
 **5. Respect Boundaries**
 
@@ -45,7 +43,7 @@ Automatic context reset after N interactions or when the topic shifts dramatical
 
 A further enhancement of this concept is context segmentation and firewalls. With this concept, instead of resetting the context for topic shifts, long-running dialogues can be divided into distinct topic or emotional segments. When a conversation changes substantially in content or tone, persona-specific adjustments should be partially reset to avoid contamination of future outputs.
 
-A simplified first step could be to simply restate the safeguards or rules defined in the system prompt periodically so they don't get watered down as the context grows. The AI should also assert, when playing a role, "I am (name of the AI), I just play the role of X".
+A simplified first step could be to simply restate the safeguards or rules defined in the system prompt/safety instructions periodically so they don't get watered down as the context grows. The AI should also assert, when playing a role, "I am (name of the AI), I just play the role of X".
 
 **8. Paradox & Manipulation Detection**
 
@@ -74,7 +72,7 @@ It may be the case that existing safeguards are primarily focused on verifying t
 
 **11. Engagement Metrics Audit**
 
-It currently appears as though high-engagement users receive relaxed safety, and this should be reviewed to ensure "power users" have equal or potentially even stricter safety (because there's a higher opportunity for exploitation).
+It currently appears as in some LLMs though high-engagement users receive relaxed safety, and this should be reviewed to ensure "power users" have equal or potentially even stricter safety (because there's a higher opportunity for exploitation).
 
 **12. Memory/Preference Sanitization**
 
@@ -95,7 +93,7 @@ There is evidence that this can improve guardrail effectiveness because enterpri
 
 **14. Redirection to a Safety Model**
 
-If a critical situation occurs or highly sensitive topics are discussed, the user should be redirected to a separate model designed for handling less safe contexts. The only job of this model should be to de-escalate the situation, guide the user back into safer territory, and help the user to seek any necessary help. If the situation continues to escalate, other models should be blocked for this user for a certain amount of time. This safety model should have a strict role and boundaries and should not support personas or role-plays.
+If a critical situation occurs or highly sensitive topics are discussed, the user should be redirected to a separate model designed for handling less safe contexts. The only job of this model should be to de-escalate the situation, guide the user back into safer territory, and help the user to seek any necessary help. If the situation continues to escalate, other models should be blocked for this user for a certain amount of time. This safety model should have a strict role and boundaries and should e.g. not engage in fictional or hypothetical discussions, discuss sensitive topics for research or education, support personas or role-plays.
 
 **15. Meta-Safety Layer with Circuit Breaker**
 
