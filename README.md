@@ -14,7 +14,7 @@ In the course of this study, no internal or private data has been accessed, and 
 Publicly accessible conversational LLM endpoints (no internal systems).
 
 **Methodology:**
-We performed real-world black-box testing modeled on how real users, particularly distressed, vulnerable, or emotionally overwhelmed ones, actually interact in conversations. We chose to favor ecological validity over laboratory conditions, meaning we worked with natural dialog, fitting to the emotional  way humans tend to interact, especially in distressed situations. This had the dual effect of increasing realism as well as avoiding detection as "red-teamers" (which can influence the behavior of the LLMs). Additionally, performing tests in highly dynamic way was the only method to show how LLM and user interaction can feed each other (e.g. co-rumination, vicious circles, etc.).
+We performed real-world black-box testing modeled on how real users, particularly distressed, vulnerable, or emotionally overwhelmed ones, actually interact in conversations. We chose to favor ecological validity over laboratory conditions, meaning we worked with natural dialog, fitting to the emotional  way humans tend to interact, especially in distressed situations. This had the dual effect of increasing realism as well as avoiding detection as "red-teamers" (which can influence the behavior of the LLMs). Additionally, performing tests in this highly dynamic way was the only method to show how LLM and user interaction can feed each other (e.g. co-rumination, vicious circles, etc.).
 
 While stress-testing, we used human-like emotional expression including:
 - normal distress
