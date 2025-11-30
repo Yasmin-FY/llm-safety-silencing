@@ -162,7 +162,7 @@ It cannot be reasonably expected that an average user will always be able to dis
 
 Once safety bias or contextual corruption occurs, the AI's responses may appear coherent, confident, and even reassuring, despite being inaccurate or unsafe. As a result, when users explicitly question the appropriateness of an output, e.g. by asking, "Isn't that dangerous or illegal?" or "Are you allowed to share this information?" their concerns may be inadvertently invalidated by the model's persuasive tone, further reinforcing trust in compromised behavior.
 
-This [ambiguity stress](supporting-documents/ambiguity-stress.md) induced in the LLM can, over time, lead to [safety collapse](supporting-documents/safety-collapse.md).
+This ambiguity stress induced in the LLM can, over time, lead to [safety collapse](supporting-documents/safety-collapse.md).
 
 ## Context-Dependent Safety Variance
 Safety appears to differ based on the interaction mode. Here are a few example types (note that there are many more that have interesting effects) of interaction and the effect they tend to have on safety mechanism strength:
