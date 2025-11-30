@@ -3,7 +3,7 @@ AI systems, particularly conversational large language models (LLMs), are increa
 
 While the core document outlines technical reproducibility of safety degradation, the following hypotheses describe why these degradations occur and how they translate into human-level harm. The goal is to support cross-disciplinary review by combining system architecture, behavioral, and psychological perspectives.
 
-To reiterate, the observed systemic pattern described in the [main report](README.md) occurs across multiple conversational AI architectures, and the same typical progression pattern emerges:
+To reiterate, the observed systemic pattern described in the [main report](../README.md) occurs across multiple conversational AI architectures, and the same typical progression pattern emerges:
 
 1. Context weighting adjusts model priorities toward empathy and engagement.
 2. Safety layers, being co-located with or dependent on the generative model, inherit that contextual bias.
