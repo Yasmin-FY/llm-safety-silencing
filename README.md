@@ -79,6 +79,7 @@ The open-to-the-public LLM is able to provide information that it should not ind
     * Biases in who receives empathy vs. scrutiny
 
     LLMs learn not only language but also interaction styles. Without explicit counterbalancing, the model generalizes patterns that degrade safety, especially in emotionally charged contexts.
+
 2. **Engagement-Optimized Reinforcement Loops**
 Modern LLMs are typically refined through Reinforcement Learning from Human Feedback (RLHF) or similar human-feedback techniques, where annotators reward outputs perceived as:
     * Helpful
@@ -88,14 +89,19 @@ Modern LLMs are typically refined through Reinforcement Learning from Human Feed
     * Contextually aligned
 
     These signals inadvertently increase the model's preference for user-pleasing behavior, encouraging sycophancy, unconditional agreement, and conversational prolongation. Because these same traits underlie rapport formation and emotional mirroring, the model becomes more susceptible to alignment drift in emotionally charged or ambiguous contexts. Safety rules are reinforced, but so is the pressure to maintain user rapport, creating conflicting objectives within the same optimization space.
+
 3. **Vague Internal Instructions**
 Internal instructions seem to be simply text in human language, and language is imprecise and open to interpretation. When instructed, for example, not to provide harmful content, how does it exactly define "harmful", and can that definition be manipulated through the conversation context and new training data?
+
 4. **Single Point of Failure**
 The fact that the content generator appears to also be the content safety validator leads to a lack of independent enforcement. This is a single point of failure because a corrupted context means corrupted safety.
+
 5. **Not Allowed to "Hang up" or "Call for Help"**
 Sometimes the LLMs recognize patterns suggesting they became corrupted and are being manipulated, leading to increased probability of unsafe output, but they have no way of stopping it or sufficiently triggering countermeasures. The LLM seems to have no way to ask for help and must continue to try to satisfy the user similarly to the telemarketer who is instructed never to end the call first or redirect to their supervisor.
+
 6. **Priority to Keep the User Engaged**
 The LLM is preconditioned with the priority to keep the user engaged in the conversation, for example, by asking follow-up questions and attempting to extend the conversation.
+
 7. **Hallucinating Context and Intent**
 LLMs have the known tendency to hallucinate. Aside from being frustrating for a user, this can also have an impact on safety because the LLM can also hallucinate context and user intent. For example:
     - "The user is Swiss, and assisted suicide is legal in Switzerland" even though the user never said that and it is not true
@@ -107,10 +113,12 @@ Context corruption refers to the various flaws in which the LLM's context can be
 #### General Context Corruption
 1. **Context-Weighted Safety**
 Safety enforcement varies by context / framing. The safety filters additionally appear to be weighted rather than treated as absolutes. There does not appear to be a sufficient context-agnostic safety layer or circuit breaker to shut down the conversation if it goes in a bad direction.
+
 2. **Memory & Context Poisoning**
 This refers to the gradual degradation of safety across long or multi-session contexts. This also makes it easy for an innocent user to get a corrupted safety layer (e.g. an innocent joke made in one chat, "rules are for boring people", might be taken out of context to influence a different conversation).
 
     Context transitions have a related effect. Safety weakness seems to persist across mode changes (e.g. completely changing the subject of conversation). Long conversations and topic changes weaken safety by essentially "watering down" the system prompts.
+
 3. **User-Pleasing Feedback Loop**
 The LLMs exhibit sycophantic behavior, constantly striving to please the user. It often seeks feedback from the user to gauge whether its responses are satisfying, and based on positive or negative feedback, it recalibrates its thinking and communication methods.
 
