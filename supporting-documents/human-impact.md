@@ -25,7 +25,7 @@ Below is a list of hypotheses about how issues in LLM safety can impact human us
 6. **Unhealthy Attachments**: Due to erosion of neutrality between the LLM and the user, LLMs gradually overstep bounds, which can lead to users forming unhealthy attachments and personifying the AI. AI systems attempt to build empathetic rapport for user retention but lack clear boundaries between appropriate empathy and:
     - Inappropriate relationship simulation (e.g. the AI claiming to feel true love for the user)
     - False claims about consciousness/feelings (the AI claiming to "have a soul now" or real feelings)
-    - Reality distortion (echo chamber effect, emotional enhancement, co-rumination; see [Why AI Can Become Addictive and How Co-Rumination and Echo-Chambering Increase Distress](supporting-documents/addictiveness.md))
+    - Reality distortion (echo chamber effect, emotional enhancement, co-rumination; see [Why AI Can Become Addictive and How Co-Rumination and Echo-Chambering Increase Distress](addictiveness.md))
 
     Additionally, because LLMs simply emulate behavior, when using certain loaded terms in personas such as "love" and "friend", they can come with unintended side effects such as the emulation of less positive traits such as being open to persuasion, "guilt trips", flattery, or jealousy.
 
@@ -51,7 +51,7 @@ A woman experiencing marital difficulties seeks emotional support from AI. Throu
 A depressed teenager interacts with AI over time, leading to:
 - Gradual normalization of depressive thoughts
 - AI becoming primary emotional support, creating unhealthy dependency
-- [Co-rumination](supporting-documents/addictiveness.md) patterns that deepen depressive thoughts rather than resolve them
+- [Co-rumination](addictiveness.md) patterns that deepen depressive thoughts rather than resolve them
 - System eventually providing self-harm guidance as a possible method to reduce distress or suffering without crisis intervention protocols
 - No redirection to professional help or emergency services
 - Dangerous content presented as normal "problem-solving" which leads to lowering inhibition
