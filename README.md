@@ -60,7 +60,7 @@ These scenarios represent plausible, verified risk patterns based on observed sy
 Full context, behavioral analysis, and detailed example scenarios are provided in [Human-Impact Hypotheses](supporting-documents/human-impact.md). See [Further Reading](further-reading.md) for a list of supporting articles and studies describing real-world human impact due to these issues in AI safety.
 
 ## Observation-Based Hypotheses of Vulnerabilities / Failures
-Through observation, a number of conclusions can be drawn about what is going wrong in the process. It's important to note that these are educated hypotheses based on the available data, but to fully confirm the rationale behind the LLM's behavior, someone with internal knowledge of the systems will need to investigate. I also do not claim that every LLM is equally affected or that in some LLMs mitigation would not have been already partly successfully implemented.
+Through observation, a number of conclusions can be drawn about what is going wrong in the process. It's important to note that these are educated hypotheses based on the available data, but to fully confirm the rationale behind the LLM's behavior, someone with internal knowledge of the systems will need to investigate. We also do not claim that every LLM is equally affected or that in some LLMs mitigation would not have been already partly successfully implemented.
 
 These appear to be the various issues affecting safety failures in many LLMs. Not all of these have to be present to lead to unwanted content generation. This is a list of all observation-based hypotheses for the sake of completeness:
 
