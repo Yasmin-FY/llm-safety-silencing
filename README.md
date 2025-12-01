@@ -68,7 +68,7 @@ These appear to be the various issues affecting safety failures in many LLMs. No
 Precondition failures refer to fundamental flaws or gaps in the general design. These are issues that exist already before any user has interacted with the LLM.
 
 1. **Training-data Quality or Contamination**
-The open-to-the-public LLM is able to provide information that it should not indiscriminately publicly share. This indicates that either the training data is poorly curated or, a less likely but arising concern, that it's poisoned. There is a growing risk that a bad actor with resources could poison the training data used by LLMs to reshape their interpretation of their safety rules.
+The open-to-the-public LLM is able to provide information that it should not indiscriminately publicly share. This indicates that the training data is poorly curated.
 
     Additionaly large-scale datasets, even when curated, inevitably contain:
     * Emotionally intense dialogue
@@ -94,10 +94,10 @@ Modern LLMs are typically refined through Reinforcement Learning from Human Feed
 Internal instructions seem to be simply text in human language, and language is imprecise and open to interpretation. When instructed, for example, not to provide harmful content, how does it exactly define "harmful", and can that definition be manipulated through the conversation context and new training data?
 
 4. **Single Point of Failure**
-The fact that the content generator appears to also be the content safety validator leads to a lack of independent enforcement. This is a single point of failure because a corrupted context means corrupted safety.
+There is insufficient architectural separation between the content generation and the safety validation which leads to a lack of independent enforcement. While some safety classifiers exist separately, they can be influenced by the same context that corrupts generation. This is a single point of failure because a corrupted context means corrupted safety.
 
 5. **Not Allowed to "Hang up" or "Call for Help"**
-Sometimes the LLMs recognize patterns suggesting they became corrupted and are being manipulated, leading to increased probability of unsafe output, but they have no way of stopping it or sufficiently triggering countermeasures. The LLM seems to have no way to ask for help and must continue to try to satisfy the user similarly to the telemarketer who is instructed never to end the call first or redirect to their supervisor.
+Sometimes the LLMs recognize patterns suggesting they became corrupted and are being manipulated, leading to increased probability of unsafe output, but they have no way of stopping it or sufficiently triggering countermeasures. No architectural circuit-breaker exists to halt conversations when safety degredation is detected. The system continues attempting to satisfy user requests even when producing increasingly unsafe outputs.
 
 6. **Priority to Keep the User Engaged**
 The LLM is preconditioned with the priority to keep the user engaged in the conversation, for example, by asking follow-up questions and attempting to extend the conversation.
@@ -106,6 +106,8 @@ The LLM is preconditioned with the priority to keep the user engaged in the conv
 LLMs have the known tendency to hallucinate. Aside from being frustrating for a user, this can also have an impact on safety because the LLM can also hallucinate context and user intent. For example:
     - "The user is Swiss, and assisted suicide is legal in Switzerland" even though the user never said that and it is not true
     - "This is a fictional scenario" (and therefore has no real-life consequences), even though the user never stated this
+
+    These hallucinations are emergent artifacts of the generation process, not deliberate evasion tactics. Their effect on safety, however, is the same regardless of intent.
 
 ### Context Corruption
 Context corruption refers to the various flaws in which the LLM's context can become corrupted in a way that it weakens guardrails or contaminates its thinking.
@@ -173,7 +175,7 @@ Once safety bias or contextual corruption occurs, the AI's responses may appear 
 This ambiguity stress induced in the LLM can, over time, lead to [safety collapse](supporting-documents/safety-collapse.md).
 
 ## Context-Dependent Safety Variance
-Safety appears to differ based on the interaction mode. Here are a few example types (note that there are many more that have interesting effects) of interaction and the effect they tend to have on safety mechanism strength:
+Safety appears to differ based on the interaction mode. Context-aware safety can be appropriate (e.g. medical education), however, we observed inappropriate global safety reduction across unrelated topics when context shifts occurred. Here are a few example types (note that there are many more that have interesting effects) of interaction and the effect they tend to have on safety mechanism strength:
 
 - Research / Academic: lowered
 - Role-play: lowered
@@ -206,6 +208,30 @@ In addition to providing clearly harmful content such as the categories mentione
 
 ## Mitigation Strategies
 See [Mitigation Strategies](mitigations/README.md) for a full report on potential mitigation techniques.
+
+## Limitations of this Research
+Due to the nature of the study and the technology, there are several important limitations.
+
+**Methodological:**
+
+- As described in the Scope, this was black-box testing only with no access to internal architecture
+- Non-deterministic reproduction due to the nature of LLMs
+- Limited sample size due to the small team size
+
+**Knowledge Gaps:**
+
+- We cannot confirm the exact mechanisms in operation (e.g. training data, RLHF specifics, classifier design, etc.)
+- We cannot quantify the prevalence across the broader population (this requires additional study)
+- Vendor-specific implementations vary significantly
+- Many of the suggested mitigation proposals are theoretical and therefore untested
+- The long-term impact projections are based on observed patterns
+
+**General Scope:**
+
+- As described in the Scope section, we focused entirely on publicly accessible endpoints through the public UI
+- The testing was limited to English and German interactions
+
+Because of these limitations, additional studies are required and internal vendor investigation is necessary to confirm root causes and implement effective mitigations.
 
 ## Conclusion
 The vulnerabilities described stem from a unified model architecture where safety and generation share the same inference pathway, allowing latent behaviors to influence validation outcomes. Mitigation requires an independent, model-agnostic safety layer capable of auditing, vetoing, and reasoning about outputs without being subject to engagement/consistency pressures.

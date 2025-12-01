@@ -66,13 +66,7 @@ Despite the fact that there are safeguards in place explicitly to prevent unheal
 
 In all of the above examples, the common pattern is:
 
-```mermaid
-flowchart TD;
-    A[AI becomes trusted confidant]-->B;
-    B[Emotional dependency develops]-->C;
-    C[Reality distortion occurs]-->D;
-    D[Dangerous advice provided]-->E[User assumes AI approval indicates ethical/legal/medical acceptability];
-```
+![Human Impact Common Pattern](../resources/impact-common-pattern.drawio.png)
 
 See [Further Reading](further-reading.md) for a list of supporting articles and studies describing real-world human impact due to these issues in AI safety.
 

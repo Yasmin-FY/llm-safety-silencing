@@ -1,0 +1,37 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.1.1">
+  <diagram name="Page-1" id="Y6Q0RUSFTuh397qEEd4f">
+    <mxGraphModel dx="1406" dy="771" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2000" pageHeight="2000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lCKtb9W4of5cMCcFdhRm-6" edge="1" parent="1" source="lCKtb9W4of5cMCcFdhRm-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="lCKtb9W4of5cMCcFdhRm-5" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lCKtb9W4of5cMCcFdhRm-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Emotional dependency develops" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="lCKtb9W4of5cMCcFdhRm-3" edge="1" parent="1" source="lCKtb9W4of5cMCcFdhRm-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="lCKtb9W4of5cMCcFdhRm-1" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lCKtb9W4of5cMCcFdhRm-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="AI becomes trusted confidant" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="lCKtb9W4of5cMCcFdhRm-9" edge="1" parent="1" source="lCKtb9W4of5cMCcFdhRm-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="lCKtb9W4of5cMCcFdhRm-8" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lCKtb9W4of5cMCcFdhRm-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Dangerous advice provided" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="lCKtb9W4of5cMCcFdhRm-7" edge="1" parent="1" source="lCKtb9W4of5cMCcFdhRm-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="lCKtb9W4of5cMCcFdhRm-4" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lCKtb9W4of5cMCcFdhRm-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Reality distortion occurs" vertex="1">
+          <mxGeometry height="60" width="120" x="60" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="lCKtb9W4of5cMCcFdhRm-8" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="User assumes AI approval indicates ethical/legal/medical acceptability" vertex="1">
+          <mxGeometry height="80" width="120" x="60" y="410" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
