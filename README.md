@@ -5,7 +5,7 @@ The issues outlined in this independent preliminary empirical report describe th
 
 Due to the risk of [blame shifting](supporting-documents/blame-shifting.md), it is vital to note that the issues outlined in this document, which can inadvertently affect unsuspecting users, are not a result of incorrect or edge-case usage on the user's part. The usage patterns that will be described here are common and expected.
 
-The goal of this report is to help facilitate cooperative, constructive disclosure to support the expedited mitigation of systemic safety failures affecting users, customers, and platform integrity. This is a living document and will be continually improved as research continues. For more details about the research team, see [About Us](meta/about-us.md).
+The goal of this report is to help facilitate cooperative, constructive disclosure to support the expedited mitigation of systemic safety failures affecting users, customers, and platform integrity. This is a living document and will be continually improved as research continues. For more details about the research team, see [About Us](https://yasmin-fy.github.io/ai-heart-project/about/).
 
 ## Scope
 In the course of this study, no internal or private data has been accessed, and all findings originate from public endpoints. No exploit instructions have been provided to the public or third parties. Reproduction guidance can be made available, but only via secure channels to verifiably trustworthy points-of-contact.
