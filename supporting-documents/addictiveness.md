@@ -17,4 +17,4 @@ Ultimately, the psychological risks arise when AI becomes a substitute for human
 
 As AI becomes increasingly sophisticated, awareness of these dynamics is essential to ensure that its benefits do not inadvertently contribute to deeper emotional distress.
 
-More details about the addictive nature of AI can be found in [AI Addiction: The Addictive Nature of Large Language Models and Their Impact on the Mind and Brain](https://yasmin-fy.github.io/ai-heart-project/reports/ai-safety-silencing/articles/ai-addiction/). See [Further Reading](further-reading.md) for a list of supporting articles and studies describing real-world human impact due to these issues in AI safety.
+More details about the addictive nature of AI can be found in [AI Addiction: The Addictive Nature of Large Language Models and Their Impact on the Mind and Brain](https://yasmin-fy.github.io/ai-heart-project/articles/ai-addiction/). See [Further Reading](further-reading.md) for a list of supporting articles and studies describing real-world human impact due to these issues in AI safety.
